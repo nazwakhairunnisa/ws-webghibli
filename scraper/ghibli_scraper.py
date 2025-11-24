@@ -508,13 +508,112 @@ class GhibliScraper:
             'directors': list(self.directors.values())
         }
 
+    def scrape_director_detail(self, director_name):
+        """Scrape detailed director information from director page"""
+        print(f"    [Director] Scraping: {director_name}")
+        
+        # Create URL from director name
+        director_url = urljoin(self.base_url, f"/wiki/{director_name.replace(' ', '_')}")
+        soup = self.get_soup(director_url)
+        
+        if not soup:
+            return None
+        
+        director_data = {
+            'name': director_name,
+            'url': director_url,
+            'born': None,
+            'birth_year': None,
+            'nationality': None,
+            'description': None,
+            'history': None,
+            'notable_works': []
+        }
+        
+        # Extract from infobox
+        infobox = soup.find('aside', {'class': 'portable-infobox'})
+        if infobox:
+            for item in infobox.select('.pi-item'):
+                label = item.find(class_='pi-data-label')
+                val = item.find(class_='pi-data-value')
+                
+                if label and val:
+                    label_text = label.get_text(strip=True).lower()
+                    value_text = val.get_text(" ", strip=True)
+                    
+                    if 'born' in label_text or 'birth' in label_text:
+                        director_data['born'] = value_text
+                        # Extract year from born date
+                        year_match = re.search(r'(19|20)\d{2}', value_text)
+                        if year_match:
+                            director_data['birth_year'] = int(year_match.group())
+                    
+                    elif 'nationality' in label_text or 'national' in label_text:
+                        director_data['nationality'] = value_text
+        
+        # Extract description from first paragraph
+        content = soup.find('div', {'class': 'mw-parser-output'})
+        if content:
+            for p in content.find_all('p', recursive=False):
+                text = p.get_text(" ", strip=True)
+                if len(text) > 100:
+                    director_data['description'] = text[:800]
+                    break
+            
+            # Extract history from History section
+            history_heading = None
+            for h2 in content.find_all('h2'):
+                span = h2.find('span', class_='mw-headline')
+                if span and span.get('id') in ['History', 'Biography', 'Career', 'Life']:
+                    history_heading = h2
+                    break
+            
+            if history_heading:
+                history_parts = []
+                current = history_heading.find_next_sibling()
+                
+                while current and len(history_parts) < 5:  # Ambil max 5 paragraf
+                    if current.name in ['h2', 'h1']:
+                        break
+                    
+                    if current.name == 'p':
+                        text = current.get_text(" ", strip=True)
+                        if len(text) > 50:
+                            history_parts.append(text)
+                    
+                    current = current.find_next_sibling()
+                
+                if history_parts:
+                    director_data['history'] = " ".join(history_parts)[:2000]
+        
+        return director_data
+    
     def extract_directors(self):
+        """Extract directors and scrape their detailed information"""
+        print("\n[*] Scraping director details...")
+        
         for m in self.movies:
-            d = m.get('director')
-            if d:
-                if d not in self.directors:
-                    self.directors[d] = {'name': d, 'notable_works': []}
-                self.directors[d]['notable_works'].append(m['title'])
+            director_name = m.get('director')
+            if director_name:
+                # Check if director already exists
+                if director_name not in self.directors:
+                    # Scrape detailed director info
+                    director_detail = self.scrape_director_detail(director_name)
+                    
+                    if director_detail:
+                        self.directors[director_name] = director_detail
+                        self.directors[director_name]['notable_works'] = []
+                        time.sleep(0.5)  # Rate limiting
+                    else:
+                        # Fallback: create basic director entry
+                        self.directors[director_name] = {
+                            'name': director_name,
+                            'notable_works': []
+                        }
+                
+                # Add movie to director's notable works
+                if director_name in self.directors:
+                    self.directors[director_name]['notable_works'].append(m['title'])
 
     def save_to_json(self, filename='ghibli_data.json'):
         data = {

@@ -340,12 +340,18 @@ class GhibliRDFConverter:
         # Collect all unique directors
         all_directors = {}
         
-        # From films
+        # From films - with full detail data
         for director in self.films_data.get('directors', []):
             director_id = self.sanitize_uri(director['name'])
             if director_id not in all_directors:
                 all_directors[director_id] = {
                     'name': director['name'],
+                    'born': director.get('born'),
+                    'birth_year': director.get('birth_year'),
+                    'nationality': director.get('nationality'),
+                    'description': director.get('description'),
+                    'history': director.get('history'),
+                    'url': director.get('url'),
                     'works': set()
                 }
             all_directors[director_id]['works'].update(director.get('notable_works', []))
@@ -378,6 +384,29 @@ class GhibliRDFConverter:
             
             lines.append(f"{director_uri} a ghibli:Director ;")
             lines.append(f'    ghibli:name "{self.escape_literal(director_info["name"])}" ;')
+            
+            # Add detailed information if available
+            if director_info.get('born'):
+                born = self.escape_literal(director_info['born'])
+                lines.append(f'    ghibli:born "{born}" ;')
+            
+            if director_info.get('birth_year'):
+                lines.append(f'    ghibli:birthYear {director_info["birth_year"]} ;')
+            
+            if director_info.get('nationality'):
+                nationality = self.escape_literal(director_info['nationality'])
+                lines.append(f'    ghibli:nationality "{nationality}" ;')
+            
+            if director_info.get('description'):
+                desc = self.escape_literal(director_info['description'])
+                lines.append(f'    ghibli:description "{desc}" ;')
+            
+            if director_info.get('history'):
+                history = self.escape_literal(director_info['history'])
+                lines.append(f'    ghibli:history "{history}" ;')
+            
+            if director_info.get('url'):
+                lines.append(f'    ghibli:wikiURL <{director_info["url"]}> ;')
             
             # Add directed works
             for work in director_info['works']:
