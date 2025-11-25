@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ghibli - Director</title>
+
+    <!-- STYLE -->
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="characters.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="logo">Ghibli<br>Studio</div>
+
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="director.html" class="active">Director</a>
+
+            <div class="dropdown">
+                <button class="dropbtn">Content ▾</button>
+                <div class="dropdown-content">
+                    <a href="content/film.html">Film</a>
+                    <a href="content/short.html">Shorts</a>
+                    <a href="content/series.html">Series</a>
+                </div>
+            </div>
+
+            <a href="characters.html">Characters</a>
+        </nav>
+
+        <!-- MOBILE MENU TOGGLE -->
+        <div class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="container">
+
+        <!-- CHARACTERS SLIDER -->
+        <section class="section-block">
+            <h2>Director</h2>
+
+            <div class="director-wrapper">
+                <button class="slide-btn" id="slideRight">›</button>
+
+                <div class="director-slider" id="directorSlider">
+
+                    <!-- example card — nanti diisi otomatis RDF -->
+                    <article class="card">
+                        <img src="https://via.placeholder.com/200x250" class="card-img" alt="">
+                        <p class="card-title">Character Name</p>
+                    </article>
+
+                    <article class="card">
+                        <img src="https://via.placeholder.com/200x250" class="card-img" alt="">
+                        <p class="card-title">Character Name</p>
+                    </article>
+
+                    <article class="card">
+                        <img src="https://via.placeholder.com/200x250" class="card-img" alt="">
+                        <p class="card-title">Character Name</p>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- FILMS GRID -->
+        <section class="section-block">
+            <h2>Films</h2>
+
+            <div class="film-grid">
+
+                <!-- example card — nanti dari RDF -->
+                <article class="film-card">
+                    <img src="https://via.placeholder.com/200x250" class="card-img" alt="">
+                    <p class="card-title">Film Title<br>(Year)</p>
+                </article>
+
+                <article class="film-card">
+                    <img src="https://via.placeholder.com/200x250" class="card-img" alt="">
+                    <p class="card-title">Film Title<br>(Year)</p>
+                </article>
+
+                <article class="film-card">
+                    <img src="https://via.placeholder.com/200x250" class="card-img" alt="">
+                    <p class="card-title">Film Title<br>(Year)</p>
+                </article>
+
+            </div>
+
+            <a href="#" class="more-btn">More >></a>
+        </section>
+
+    </main>
+
+    <!-- JS -->
+    <script src="app.js"></script>
+</body>
+</html>

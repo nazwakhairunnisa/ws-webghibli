@@ -1,0 +1,214 @@
+/* ===========================================================
+   PAGE BACKGROUND
+=========================================================== */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to bottom, #A5C6DB, #03695E);
+  overflow-x: hidden;
+}
+
+/* ===========================================================
+   MAIN CONTENT BOX
+=========================================================== */
+.container {
+  margin-top: 140px;
+  padding: 40px 60px;
+  background: white;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ===========================================================
+   CONSISTENT SECTION SPACING
+=========================================================== */
+.section-block {
+  margin-bottom: 60px;
+}
+
+.section-block h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 30px;
+  margin-bottom: 15px;
+}
+
+/* ===========================================================
+   CHARACTER SLIDER (same style as Director)
+=========================================================== */
+.director-wrapper {
+  position: relative;
+}
+
+.director-slider {
+  display: flex;
+  gap: 25px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding-bottom: 10px;
+}
+
+.director-slider::-webkit-scrollbar {
+  height: 6px;
+}
+
+/* CARD WRAPPER */
+.card {
+  width: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* IMAGE STYLE */
+.card-img {
+  width: 100%;
+  height: 220px;
+  border-radius: 8px;
+  object-fit: cover;
+  background: #DADADA;
+}
+
+/* TITLE BELOW IMAGE */
+.card-title {
+  font-size: 13px;
+  text-align: center;
+  margin-top: 6px;
+  color: #333;
+}
+
+/* SLIDE BUTTON */
+.slide-btn {
+  position: absolute;
+  right: -12px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: white;
+  padding: 10px 14px;
+  font-size: 22px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+  z-index: 10;
+}
+
+/* ===========================================================
+   FILMS GRID
+=========================================================== */
+.film-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 45px;
+}
+
+.film-card {
+  text-align: center;
+}
+
+/* IMAGE STYLE */
+.film-img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+  background: #DADADA;
+}
+
+/* TITLE BELOW IMAGE */
+.film-title {
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+
+
+/* MORE BUTTON */
+.more-btn {
+  display: block;
+  margin-top: 25px;
+  text-align: right;
+  font-weight: 600;
+  text-decoration: none;
+  color: black;
+}
+
+/* MORE BUTTON */
+.more-btn {
+  display: block;
+  margin-top: 25px;
+  text-align: right;
+  font-weight: 600;
+  text-decoration: none;
+  color: black;
+}
+
+/* ===========================================================
+   RESPONSIVE DESIGN
+=========================================================== */
+
+/* Tablet */
+@media (max-width: 900px) {
+  .container {
+    padding: 30px;
+  }
+
+  .film-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  .card {
+    width: 160px;
+  }
+
+  .card-img {
+    height: 200px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+
+  .container {
+    padding: 20px;
+  }
+
+  .section-block {
+    margin-bottom: 40px;
+  }
+
+  .section-block h2 {
+    font-size: 22px;
+  }
+
+  /* Slider items bigger */
+  .card {
+    width: 75%;
+    margin: 0 auto;
+  }
+
+  .card-img {
+    height: auto;
+    aspect-ratio: 3 / 4;
+  }
+
+  .card-title {
+    font-size: 14px;
+  }
+
+  /* Hide slide button on mobile */
+  .slide-btn {
+    display: none;
+  }
+
+  /* Film grid becomes single column */
+  .film-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+}
