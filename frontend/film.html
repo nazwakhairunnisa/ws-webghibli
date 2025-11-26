@@ -1,173 +1,87 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style1.css" />
-  <title>Film Detail</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ghibli - Film</title>
+
+    <link rel="stylesheet" href="../navbar.css">
+    <link rel="stylesheet" href="content.css">
 </head>
 
 <body>
-  <!-- HERO SECTION -->
-  <section class="hero-section">
-    <!-- HERO IMAGE MANUAL (lokal berdasarkan title) -->
-    <img id="hero-img" class="hero-img" />
 
-    <div class="hero-overlay"></div>
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="logo">Ghibli<br>Studio</div>
 
-    <div class="hero-flex">
-      <h1 id="film-title"></h1>
-      <p id="film-synopsis-short"></p>
-    </div>
+        <nav class="nav-links">
+            <a href="../index.html">Home</a>
+            <a href="../director.html">Director</a>
 
-    <div class="hero-overlay-green"></div>
-  </section>
-
-  <!-- MAIN CONTENT -->
-  <section class="green-wrapper">
-    <div class="white-card">
-      <!-- POSTER + META -->
-      <div class="top-content">
-        <img id="poster-img" class="poster" />
-
-        <div class="meta">
-          <div><strong>Title</strong>: <span id="meta-title"></span></div>
-          <div><strong>Release Year</strong>: <span id="meta-year"></span></div>
-          <div><strong>Director</strong>: <span id="meta-director"></span></div>
-          <div><strong>Duration</strong>: <span id="meta-duration"></span></div>
-          <div><strong>Genre</strong>: <span id="meta-genres"></span></div>
-        </div>
-      </div>
-
-      <!-- DESCRIPTION -->
-      <h2>Description</h2>
-      <p id="film-description"></p>
-
-      <!-- SYNOPSIS -->
-      <h2>Synopsis</h2>
-      <p id="film-synopsis"></p>
-
-      <!-- CHARACTER SECTION -->
-      <h2>Character</h2>
-      <div id="characters-list"></div>
-    </div>
-  </section>
-
-  <!-- SCRIPT -->
-  <script>
-    /* ================================
-          BACA PARAMETER ?film=0
-    ================================= */
-    const urlParams = new URLSearchParams(window.location.search);
-    const filmIndex = urlParams.get("film") ?? 0;
-
-    /* Proxy agar gambar scraping bisa muncul */
-    function proxy(url) {
-      return "https://images.weserv.nl/?url=" + encodeURIComponent(url);
-    }
-
-    /* ===================================================
-       HERO IMAGE MAPPING (manual — sesuai gambar lokalmu)
-       =================================================== */
-    const heroImages = {
-      "Castle in the Sky": "castle.jpg",
-      "Earwig and the Witch": "earwig.jpg",
-      "From Up on Poppy Hill": "poppy.jpg",
-      "Grave of the Fireflies": "fireflies.jpg",
-      "Howl's Moving Castle": "howl.jpg",
-      "Kiki's Delivery Service": "kiki.jpg",
-      "List of Studio Ghibli films by rating": "rating.jpg",
-      "Mary and the Witch's Flower": "mary.jpg",
-      "Modest Heroes": "modest.jpg",
-      "My Neighbor Totoro": "totoro.jpg",
-      "My Neighbors the Yamadas": "yamadas.jpg",
-      "Nausicaä of the Valley of the Wind": "nausicaa.jpg",
-      "Ocean Waves": "ocean.jpg",
-      "Only Yesterday": "yesterday.jpg",
-      "Panda! Go, Panda!": "panda.jpg",
-      "Pom Poko": "pompoko.jpg",
-      "Ponyo": "ponyo.jpg",
-      "Porco Rosso": "porco.jpg",
-      "Princess Mononoke": "mononoke.jpg",
-      "Ronja, the Robber's Daughter": "ronja.jpg",
-      "Spirited Away": "spirited.jpg",
-      "Tales from Earthsea": "earthsea.jpg",
-      "The Boy and the Heron": "heron.jpg",
-      "The Castle of Cagliostro": "cagliostro.jpg",
-      "The Cat Returns": "catreturns.jpg",
-      "The Imaginary": "imaginary.jpg",
-      "The Red Turtle": "redturtle.jpg",
-      "The Secret World of Arrietty": "arrietty.jpg",
-      "The Tale of the Princess Kaguya": "kaguya.jpg",
-      "The Wind Rises": "windrises.jpg",
-    };
-
-    /* ================================
-             FETCH DATA JSON
-    ================================= */
-    fetch("../data/films.json")
-      .then((res) => res.json())
-      .then((data) => {
-        const film = data.movies[filmIndex];
-
-        if (!film) {
-          document.body.innerHTML = "";
-          return;
-        }
-
-        /* ====================================
-              PASANG HERO IMAGE MANUAL
-        ===================================== */
-        const heroFile = heroImages[film.title];
-        document.getElementById("hero-img").src = "img/hero/" + heroFile;
-
-        /* HERO TEXT */
-        document.getElementById("film-title").innerHTML = film.title.replace(" ", "<br>");
-        document.getElementById("film-synopsis-short").innerText =
-          film.synopsis.substring(0, 350) + " ... More >>";
-
-        /* META DATA */
-        document.getElementById("poster-img").src = proxy(film.poster_url);
-        document.getElementById("meta-title").innerText = film.title;
-        document.getElementById("meta-year").innerText = film.release_year;
-        document.getElementById("meta-director").innerText = film.director;
-        document.getElementById("meta-duration").innerText = film.duration;
-        document.getElementById("meta-genres").innerText = film.genres.join(", ");
-
-        /* DESCRIPTION */
-        document.getElementById("film-description").innerText = film.description;
-
-        /* SYNOPSIS */
-        document.getElementById("film-synopsis").innerText = film.synopsis;
-
-        /* ================================
-                  CHARACTER SECTION
-        ================================= */
-        const charContainer = document.getElementById("characters-list");
-
-        film.characters.forEach((c) => {
-          const wrapper = document.createElement("div");
-          wrapper.className = "character-box";
-
-          wrapper.innerHTML = `
-            <h3 class="char-name">${c.name}</h3>
-
-            <div class="char-top">
-              <img src="${proxy(c.image_url)}" class="char-img" />
-
-              <div class="char-info">
-                <div class="row"><strong>Age</strong><span>${c.age ?? "-"}</span></div>
-                <div class="row"><strong>Gender</strong><span>${c.gender}</span></div>
-              </div>
+            <div class="dropdown">
+                <button class="dropbtn">Content ▾</button>
+                <div class="dropdown-content">
+                    <a href="film.html" class="active">Film</a>
+                    <a href="short.html">Shorts</a>
+                    <a href="series.html">Series</a>
+                </div>
             </div>
 
-            <p class="char-desc">${c.description}</p>
-          `;
+            <a href="../characters.html">Characters</a>
+        </nav>
 
-          charContainer.appendChild(wrapper);
-        });
-      })
-      .catch((err) => console.error("ERROR JSON:", err));
-  </script>
+        <div class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="container">
+
+        <section class="section-block">
+            <h2>Films</h2>
+
+            <div class="film-grid">
+
+                <!-- dummy cards — nanti otomatis RDF -->
+                <article class="film-card">
+                    <img src="https://via.placeholder.com/230x310" class="film-img" alt="">
+                    <p class="film-title">Castle in the Sky<br>(1986)</p>
+                </article>
+
+                <article class="film-card">
+                    <img src="https://via.placeholder.com/230x310" class="film-img" alt="">
+                    <p class="film-title">My Neighbor Totoro<br>(1988)</p>
+                </article>
+
+                <article class="film-card">
+                    <img src="https://via.placeholder.com/230x310" class="film-img" alt="">
+                    <p class="film-title">Kiki's Delivery Service<br>(1989)</p>
+                </article>
+
+                <article class="film-card">
+                    <img src="https://via.placeholder.com/230x310" class="film-img" alt="">
+                    <p class="film-title">Kiki's Delivery Service<br>(1989)</p>
+                </article>
+
+                <article class="film-card">
+                    <img src="https://via.placeholder.com/230x310" class="film-img" alt="">
+                    <p class="film-title">Kiki's Delivery Service<br>(1989)</p>
+                </article>
+
+                <!-- tambah card lain jika mau -->
+
+            </div>
+
+            <a href="#" class="more-btn">More >></a>
+        </section>
+
+    </main>
+
+    <script src="../app.js"></script>
 </body>
 </html>

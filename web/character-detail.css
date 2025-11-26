@@ -1,0 +1,179 @@
+body {
+  background: linear-gradient(to bottom, #ffffff 0%, #03695E 100%);
+  font-family: Arial, sans-serif;
+  padding-top: 40px;
+  margin: 0;
+}
+
+.green-wrapper {
+  padding: 60px 20px;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.white-card {
+  width: 90%;
+  max-width: 1100px;
+  background: #fff;
+  margin: 60px auto;
+  padding: 40px 50px;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.white-card h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 26px;
+  color: #03695E;
+}
+
+.char-name {
+  font-family: "Playfair Display", serif;
+  font-size: 22px;
+  font-weight: bold;
+  margin: 20px 0 20px 20px;
+  color: #333;
+}
+
+.char-detail-box {
+  display: flex;
+  gap: 35px;
+  align-items: flex-start;
+  margin: 20px 0 0 20px;
+}
+
+.char-detail-img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.char-detail-img-placeholder {
+  width: 180px;
+  height: 180px;
+  background: linear-gradient(135deg, #4fc3f7 0%, #2196f3 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 60px;
+  border-radius: 6px;
+}
+
+.char-detail-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.char-detail-info .row {
+  display: grid;
+  grid-template-columns: 90px 10px auto;
+  align-items: center;
+  font-size: 16px;
+  margin-top: 15px;
+}
+
+.char-detail-info .row strong {
+  font-weight: 600;
+}
+
+.char-detail-info .colon {
+  text-align: center;
+  font-weight: bold;
+}
+
+.char-desc-full {
+  margin-top: 25px;
+  margin-left: 20px;
+  width: 90%;
+  line-height: 1.7;
+  font-size: 16px;
+  text-align: justify;
+}
+
+.recommend-wrapper {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.rec-card {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.rec-card:hover {
+  transform: translateY(-5px);
+}
+
+.rec-card a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.rec-img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.18);
+}
+
+.rec-img-placeholder {
+  width: 200px;
+  height: 200px;
+  background: linear-gradient(135deg, #4fc3f7 0%, #2196f3 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 70px;
+  border-radius: 8px;
+}
+
+.rec-name {
+  margin-top: 10px;
+  font-family: "Playfair Display", serif;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.back-btn {
+  display: inline-block;
+  padding: 12px 30px;
+  background: #03695E;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.back-btn:hover {
+  background: #025048;
+}
+
+@media (max-width: 768px) {
+  .char-detail-box {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .char-detail-img,
+  .char-detail-img-placeholder {
+    width: 60%;
+    height: auto;
+  }
+  
+  .recommend-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+}

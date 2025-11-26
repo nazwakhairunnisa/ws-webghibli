@@ -1,118 +1,87 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style1.css">
-  <title>Series Detail</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ghibli - Series</title>
+
+    <link rel="stylesheet" href="../navbar.css">
+    <link rel="stylesheet" href="content.css">
 </head>
 
 <body>
 
-  <!-- HERO SECTION -->
-  <section class="hero-section">
-    <img id="hero-img" class="hero-img">
-    <div class="hero-overlay"></div>
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="logo">Ghibli<br>Studio</div>
 
-    <div class="hero-flex">
-      <h1 id="series-title"></h1>
-      <p id="series-synopsis-short"></p>
-    </div>
+        <nav class="nav-links">
+            <a href="../index.html">Home</a>
+            <a href="../director.html">Director</a>
 
-    <div class="hero-overlay-green"></div>
-  </section>
+            <div class="dropdown">
+                <button class="dropbtn">Content ▾</button>
+                <div class="dropdown-content">
+                    <a href="film.html">Film</a>
+                    <a href="short.html">Shorts</a>
+                    <a href="series.html"class="active">Series</a>
+                </div>
+            </div>
 
-  <!-- MAIN CONTENT WRAPPER -->
-  <section class="green-wrapper">
-    <div class="white-card">
+            <a href="../characters.html">Characters</a>
+        </nav>
 
-      <!-- POSTER + META -->
-      <div class="top-content">
-        <img id="poster-img" class="poster">
-
-        <div class="meta">
-          <div><strong>Title</strong>: <span id="meta-title"></span></div>
-          <div><strong>Release Year</strong>: <span id="meta-year"></span></div>
-          <div><strong>Director</strong>: <span id="meta-director"></span></div>
-          <div><strong>Episodes</strong>: <span id="meta-episodes"></span></div>
-          <div><strong>Studio</strong>: <span id="meta-studio"></span></div>
+        <div class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
-      </div>
-
-      <!-- DESCRIPTION -->
-      <h2>Description</h2>
-      <p id="series-description"></p>
-
-      <!-- SYNOPSIS -->
-      <h2>Synopsis</h2>
-      <p id="series-synopsis"></p>
-
-    </div>
-  </section>
+    </header>
 
 
-  <!-- SCRIPT -->
-  <script>
-    /* Ambil index dari URL */
-    const urlParams = new URLSearchParams(window.location.search);
-    const seriesIndex = urlParams.get("series") ?? 0;
+    <!-- MAIN CONTENT -->
+    <main class="container">
 
-    /* Proxy untuk gambar */
-    function proxy(url) {
-      if (!url) return "img/hero/default.jpg";
-      return "https://images.weserv.nl/?url=" + encodeURIComponent(url);
-    }
+        <section class="section-block">
+            <h2>Series</h2>
 
-    /* HERO IMAGE MAP */
-    const heroSeries = {
-      "Ronja, the Robber's Daughter": "ronja.jpg",
-      "Sherlock Hound": "hound.jpg",
-      "Film Guru Guru": "guru.jpg",
-      "Ronja the Robber Daughter": "ronja2.jpg"
-    };
+            <div class="film-grid">
 
-    /* FETCH DATA */
-    fetch("../data/series.json")
-      .then(res => res.json())
-      .then(data => {
+                <!-- dummy cards — nanti otomatis RDF -->
+                <article class="film-card">
+                    <img src="https://via.placeholder.com/230x310" class="film-img" alt="">
+                    <p class="film-title">Castle in the Sky<br>(1986)</p>
+                </article>
 
-        const series = data.series[seriesIndex];
+                <article class="film-card">
+                    <img src="https://via.placeholder.com/230x310" class="film-img" alt="">
+                    <p class="film-title">My Neighbor Totoro<br>(1988)</p>
+                </article>
 
-        if (!series) {
-          document.body.innerHTML = "<h1 style='color:white; text-align:center;'>Series tidak ditemukan 😭</h1>";
-          return;
-        }
+                <article class="film-card">
+                    <img src="https://via.placeholder.com/230x310" class="film-img" alt="">
+                    <p class="film-title">Kiki's Delivery Service<br>(1989)</p>
+                </article>
 
-        /* PASANG HERO IMAGE */
-        const heroFile = heroSeries[series.title];
-        document.getElementById("hero-img").src = "img/hero/" + heroFile;
+                <article class="film-card">
+                    <img src="https://via.placeholder.com/230x310" class="film-img" alt="">
+                    <p class="film-title">Kiki's Delivery Service<br>(1989)</p>
+                </article>
 
-        /* HERO TEXT */
-        document.getElementById("series-title").innerHTML =
-          series.title.replace(" ", "<br>");
+                <article class="film-card">
+                    <img src="https://via.placeholder.com/230x310" class="film-img" alt="">
+                    <p class="film-title">Kiki's Delivery Service<br>(1989)</p>
+                </article>
 
-        document.getElementById("series-synopsis-short").innerText =
-          (series.plot ?? series.description ?? "").substring(0, 350);
+                <!-- tambah card lain jika mau -->
 
-        /* META */
-        document.getElementById("poster-img").src = proxy(series.poster_url);
-        document.getElementById("meta-title").innerText = series.title;
-        document.getElementById("meta-year").innerText = series.release_year ?? "-";
-        document.getElementById("meta-director").innerText = series.director ?? "-";
-        document.getElementById("meta-episodes").innerText = series.episodes ?? "-";
-        document.getElementById("meta-studio").innerText = series.studio ?? "-";
+            </div>
 
-        /* DESCRIPTION */
-        document.getElementById("series-description").innerText =
-          series.description ?? "-";
+            <a href="#" class="more-btn">More >></a>
+        </section>
 
-        /* SYNOPSIS */
-        document.getElementById("series-synopsis").innerText =
-          series.plot ?? series.description ?? "-";
+    </main>
 
-      })
-      .catch(err => console.error("ERROR JSON:", err));
-  </script>
-
+    <script src="../app.js"></script>
 </body>
 </html>

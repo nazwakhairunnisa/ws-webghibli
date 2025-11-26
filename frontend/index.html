@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Ghibli Library</title>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="logo">Ghibli<br>Studio</div>
+
+    <nav class="nav-links">
+      <a href="index.html" class="active">Home</a>
+      <a href="#director">Director</a>
+
+      <div class="dropdown">
+        <button class="dropbtn">Content ▾</button>
+        <div class="dropdown-content">
+          <a href="#films">Film</a>
+          <a href="#shorts">Shorts</a>
+          <a href="#series">Series</a>
+        </div>
+      </div>
+
+      <a href="characters.html">Characters</a>
+    </nav>
+
+    <div class="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <!-- Left Text Card -->
+    <div class="hero-text-card">
+      <h1>Ghibli Library</h1>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu 
+        fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in 
+        culpa qui officia deserunt mollit anim id est laborum.
+      </p>
+    </div>
+
+    <!-- Right Image + Search -->
+    <div class="hero-right">
+      <div class="search-box">
+        <img src="assets/Search.png" class="search-icon" alt="Search Icon">
+        <input type="text" placeholder="What You Want to Find?">
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTENT CONTAINER -->
+  <main class="content-container">
+
+    <!-- DIRECTOR SECTION -->
+    <section class="section-block" id="director">
+      <h2>Director</h2>
+      <div class="slider-wrapper">
+        <button class="slide-btn slide-left" data-slider="directorSlider">‹</button>
+        <div class="content-slider" id="directorSlider">
+          
+          <article class="card">
+            <img src="https://via.placeholder.com/200x250" class="card-img" alt="Hayao Miyazaki">
+            <p class="card-title">Hayao Miyazaki</p>
+          </article>
+
+          <article class="card">
+            <img src="https://via.placeholder.com/200x250" class="card-img" alt="Isao Takahata">
+            <p class="card-title">Isao Takahata</p>
+          </article>
+
+          <article class="card">
+            <img src="https://via.placeholder.com/200x250" class="card-img" alt="Gorō Miyazaki">
+            <p class="card-title">Gorō Miyazaki</p>
+          </article>
+
+          <article class="card">
+            <img src="https://via.placeholder.com/200x250" class="card-img" alt="Hiromasa Yonebayashi">
+            <p class="card-title">Hiromasa Yonebayashi</p>
+          </article>
+
+        </div>
+        <button class="slide-btn slide-right" data-slider="directorSlider">›</button>
+      </div>
+    </section>
+
+    <!-- FILMS SECTION -->
+    <section class="section-block" id="films">
+      <h2>Films</h2>
+      <div class="content-grid">
+        
+        <article class="grid-card">
+          <img src="https://via.placeholder.com/200x300" class="card-img" alt="Castle in the Sky">
+          <p class="card-title">Castle in the Sky<br>(1986)</p>
+        </article>
+
+        <article class="grid-card">
+          <img src="https://via.placeholder.com/200x300" class="card-img" alt="My Neighbor Totoro">
+          <p class="card-title">My Neighbor Totoro<br>(1988)</p>
+        </article>
+
+        <article class="grid-card">
+          <img src="https://via.placeholder.com/200x300" class="card-img" alt="Spirited Away">
+          <p class="card-title">Spirited Away<br>(2001)</p>
+        </article>
+
+        <article class="grid-card">
+          <img src="https://via.placeholder.com/200x300" class="card-img" alt="Howl's Moving Castle">
+          <p class="card-title">Howl's Moving Castle<br>(2004)</p>
+        </article>
+
+        <article class="grid-card">
+          <img src="https://via.placeholder.com/200x300" class="card-img" alt="Ponyo">
+          <p class="card-title">Ponyo<br>(2008)</p>
+        </article>
+
+        <article class="grid-card">
+          <img src="https://via.placeholder.com/200x300" class="card-img" alt="The Wind Rises">
+          <p class="card-title">The Wind Rises<br>(2013)</p>
+        </article>
+
+      </div>
+      <a href="content/film.html" class="more-btn">More >></a>
+    </section>
+
+    <!-- SHORTS SECTION -->
+    <section class="section-block" id="shorts">
+      <h2>Shorts</h2>
+      <div class="content-grid">
+        
+        <article class="grid-card">
+          <img src="https://via.placeholder.com/200x300" class="card-img" alt="Short 1">
+          <p class="card-title">Mei and the Kittenbus<br>(2002)</p>
+        </article>
+
+        <article class="grid-card">
+          <img src="https://via.placeholder.com/200x300" class="card-img" alt="Short 2">
+          <p class="card-title">Imaginary Flying Machines<br>(2002)</p>
+        </article>
+
+        <article class="grid-card">
+          <img src="https://via.placeholder.com/200x300" class="card-img" alt="Short 3">
+          <p class="card-title">The Day I Harvested a Star<br>(2006)</p>
+        </article>
+
+      </div>
+      <a href="content/short.html" class="more-btn">More >></a>
+    </section>
+
+    <!-- SERIES SECTION -->
+    <section class="section-block" id="series">
+      <h2>Series</h2>
+      <div class="content-grid">
+        
+        <article class="grid-card">
+          <img src="https://via.placeholder.com/200x300" class="card-img" alt="Series 1">
+          <p class="card-title">Ronja, the Robber's Daughter<br>(2014)</p>
+        </article>
+
+        <article class="grid-card">
+          <img src="https://via.placeholder.com/200x300" class="card-img" alt="Series 2">
+          <p class="card-title">Earwig and the Witch<br>(2020)</p>
+        </article>
+
+      </div>
+      <a href="content/series.html" class="more-btn">More >></a>
+    </section>
+
+  </main>
+
+  <script src="index.js"></script>
+  
+</body>
+</html>
