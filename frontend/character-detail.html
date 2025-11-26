@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Character Detail</title>
+
+  <!-- Playfair -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      background: linear-gradient(to bottom, #ffffff 0%, #03695E 100%);
+      font-family: Arial, sans-serif;
+      padding-top: 40px;
+    }
+
+    /* CARD */
+    .white-card {
+      width: 90%;
+      max-width: 1100px;
+      background: #fff;
+    margin: 120px auto 80px auto;
+      padding: 40px 50px;
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    /* TITLE */
+    .white-card h2 {
+      font-family: "Playfair Display", serif;
+      font-size: 26px;
+    }
+
+    .char-name {
+      font-family: "Playfair Display", serif;
+      font-size: 22px;
+      font-weight: bold;
+      margin-top: 10px;
+      margin-left: 20px;
+    }
+
+    /* MAIN CHARACTER BOX */
+    .char-detail-box {
+      display: flex;
+      gap: 35px;
+      align-items: flex-start;
+      margin: 20px 0 0 20px;
+    }
+
+    .char-detail-img {
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+
+  .char-detail-info {
+  display: flex;
+  flex-direction: column; /* TATA KE BAWAH */
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.char-detail-info .row {
+  display: grid;
+  grid-template-columns: 90px 10px auto; /* Label | ":" | Isi */
+  align-items: center;
+  font-size: 16px;
+
+  margin-top: 15px;
+}
+
+.char-detail-info .row strong {
+  font-weight: 600;
+}
+
+.char-detail-info .colon {
+  text-align: center;
+  font-weight: bold;
+}
+
+
+
+
+    /* DESCRIPTION */
+    .char-desc-full {
+      margin-top: 15px;
+      margin-left: 20px;
+      width: 90%;
+      line-height: 1.6;
+      font-size: 16px;
+    }
+
+    /* RECOMMENDATION */
+    .recommend-wrapper {
+      display: flex;
+      justify-content: space-evenly;
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .rec-card {
+      cursor: pointer;
+    }
+
+    .rec-img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.18);
+    }
+
+    .rec-name {
+      margin-top: 8px;
+      font-family: "Playfair Display", serif;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <!-- HERO (background gradient top handled in body) -->
+  <section class="green-wrapper">
+    <div class="white-card">
+
+      <h2>Character</h2>
+      <h3 id="char-name" class="char-name">Loading...</h3>
+
+      <div class="char-detail-box">
+        <img id="char-img" class="char-detail-img" src="img/hero/default.jpg" alt="character">
+
+        <div class="char-detail-info">
+          <div class="row">
+            <strong>Age</strong>
+            <span class="colon">:</span>
+            <span id="char-age">-</span>
+          </div>
+
+          <div class="row">
+            <strong>Gender</strong>
+            <span class="colon">:</span>
+            <span id="char-gender">-</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- description (script akan isi) -->
+      <p id="char-desc" class="char-desc-full">Loading description...</p>
+
+      <!-- Recommendation -->
+      <h2 style="margin-top:40px;">Recommendation</h2>
+      <div id="recommendation-list" class="recommend-wrapper"></div>
+
+    </div> <!-- END .white-card -->
+  </section>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    let charNameParam = urlParams.get("name");
+
+    function proxy(url) {
+      return url ? "https://images.weserv.nl/?url=" + encodeURIComponent(url) : "img/hero/default.jpg";
+    }
+
+    Promise.all([
+      fetch("../data/films.json").then(r => r.json()).catch(()=>({movies:[]})),
+      fetch("../data/series.json").then(r => r.json()).catch(()=>({series:[]})),
+      fetch("../data/shorts.json").then(r => r.json()).catch(()=>({shorts:[]}))
+    ]).then(([films, series, shorts]) => {
+
+      const allCharacters = [];
+
+      // FILM
+      (films.movies || []).forEach(m => {
+        (m.characters || []).forEach(c => {
+          allCharacters.push({
+            name: c.name,
+            age: c.age ?? "-",
+            gender: c.gender ?? "-",
+            desc: c.description ?? "-",
+            img: c.image_url ?? ""
+          });
+        });
+      });
+
+      // SERIES
+      (series.series || []).forEach(s => {
+        (s.characters || []).forEach(c => {
+          allCharacters.push({
+            name: c.name,
+            age: c.age ?? "-",
+            gender: c.gender ?? "-",
+            desc: c.description ?? "-",
+            img: c.image_url ?? ""
+          });
+        });
+      });
+
+      // SHORTS
+      (shorts.shorts || []).forEach(sh => {
+        (sh.characters || []).forEach(c => {
+          allCharacters.push({
+            name: c.name,
+            age: c.age ?? "-",
+            gender: c.gender ?? "-",
+            desc: c.description ?? "-",
+            img: c.image_url ?? ""
+          });
+        });
+      });
+
+      if (!allCharacters.length) {
+        document.querySelector('.white-card').innerHTML = '<h1 style="text-align:center;margin:60px 0">No character data found</h1>';
+        return;
+      }
+
+      // default param to first item if missing
+      if (!charNameParam) {
+        charNameParam = allCharacters[0].name;
+      }
+
+      const norm = s => (s||'').toString().trim().toLowerCase();
+
+      const found = allCharacters.find(c => norm(c.name) === norm(charNameParam));
+      const fallback = allCharacters.find(c => norm(c.name).includes(norm(charNameParam)));
+
+      const target = found || fallback;
+
+      if (!target) {
+        document.body.innerHTML = `<h1 style="text-align:center;margin-top:100px;">Character Not Found</h1>`;
+        return;
+      }
+
+      // render main
+      document.getElementById('char-name').innerText = target.name;
+      document.getElementById('char-age').innerText = target.age;
+      document.getElementById('char-gender').innerText = target.gender;
+      document.getElementById('char-desc').innerText = target.desc || '-';
+      document.getElementById('char-img').src = target.img ? proxy(target.img) : 'img/hero/default.jpg';
+
+      // recommendations: random 3 different items from allCharacters (with images if possible)
+      const pool = allCharacters.filter(x => norm(x.name) !== norm(target.name));
+      pool.sort(() => Math.random() - 0.5);
+      const picks = pool.slice(0, 3);
+
+      const recWrap = document.getElementById('recommendation-list');
+      recWrap.innerHTML = '';
+
+      picks.forEach(p => {
+        const card = document.createElement('div');
+        card.className = 'rec-card';
+        card.innerHTML = `
+          <img class="rec-img" src="${p.img ? proxy(p.img) : 'img/hero/default.jpg'}" alt="${p.name}">
+          <div class="rec-name">${p.name}</div>
+        `;
+        card.onclick = () => window.location.href = 'karakter.html?name=' + encodeURIComponent(p.name);
+        recWrap.appendChild(card);
+      });
+
+    }).catch(err => {
+      console.error(err);
+      document.body.innerHTML = '<h1 style="text-align:center;margin-top:100px;">Error loading data</h1>';
+    });
+  </script>
+</body>
+
+</html>

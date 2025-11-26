@@ -1,19 +1,17 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style1.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style1.css" />
   <title>Film Detail</title>
 </head>
 
 <body>
-
   <!-- HERO SECTION -->
   <section class="hero-section">
-
     <!-- HERO IMAGE MANUAL (lokal berdasarkan title) -->
-    <img id="hero-img" class="hero-img">
+    <img id="hero-img" class="hero-img" />
 
     <div class="hero-overlay"></div>
 
@@ -28,10 +26,9 @@
   <!-- MAIN CONTENT -->
   <section class="green-wrapper">
     <div class="white-card">
-
       <!-- POSTER + META -->
       <div class="top-content">
-        <img id="poster-img" class="poster">
+        <img id="poster-img" class="poster" />
 
         <div class="meta">
           <div><strong>Title</strong>: <span id="meta-title"></span></div>
@@ -53,18 +50,11 @@
       <!-- CHARACTER SECTION -->
       <h2>Character</h2>
       <div id="characters-list"></div>
-
-      <!-- RECOMMENDATION -->
-      <h2>Recommendation</h2>
-      <div id="recommendation-list" class="recommend-wrapper"></div>
-
     </div>
   </section>
 
-
   <!-- SCRIPT -->
   <script>
-
     /* ================================
           BACA PARAMETER ?film=0
     ================================= */
@@ -109,17 +99,15 @@
       "The Red Turtle": "redturtle.jpg",
       "The Secret World of Arrietty": "arrietty.jpg",
       "The Tale of the Princess Kaguya": "kaguya.jpg",
-      "The Wind Rises": "windrises.jpg"
+      "The Wind Rises": "windrises.jpg",
     };
-
 
     /* ================================
              FETCH DATA JSON
     ================================= */
-    fetch('../data/films.json')
-      .then(res => res.json())
-      .then(data => {
-
+    fetch("../data/films.json")
+      .then((res) => res.json())
+      .then((data) => {
         const film = data.movies[filmIndex];
 
         if (!film) {
@@ -132,7 +120,6 @@
         ===================================== */
         const heroFile = heroImages[film.title];
         document.getElementById("hero-img").src = "img/hero/" + heroFile;
-
 
         /* HERO TEXT */
         document.getElementById("film-title").innerHTML = film.title.replace(" ", "<br>");
@@ -153,14 +140,12 @@
         /* SYNOPSIS */
         document.getElementById("film-synopsis").innerText = film.synopsis;
 
-
         /* ================================
                   CHARACTER SECTION
         ================================= */
         const charContainer = document.getElementById("characters-list");
 
-        film.characters.forEach(c => {
-
+        film.characters.forEach((c) => {
           const wrapper = document.createElement("div");
           wrapper.className = "character-box";
 
@@ -168,10 +153,10 @@
             <h3 class="char-name">${c.name}</h3>
 
             <div class="char-top">
-              <img src="${proxy(c.image_url)}" class="char-img">
+              <img src="${proxy(c.image_url)}" class="char-img" />
 
               <div class="char-info">
-                <div class="row"><strong>Age</strong><span>${c.age ?? '-'}</span></div>
+                <div class="row"><strong>Age</strong><span>${c.age ?? "-"}</span></div>
                 <div class="row"><strong>Gender</strong><span>${c.gender}</span></div>
               </div>
             </div>
@@ -181,37 +166,8 @@
 
           charContainer.appendChild(wrapper);
         });
-
-
-        /* ================================
-             RANDOM RECOMMENDATION (3)
-        ================================= */
-        const recContainer = document.getElementById("recommendation-list");
-
-        let recList = [...film.characters];
-        recList.shift();
-        recList.sort(() => Math.random() - 0.5);
-
-        const randomRecs = recList.slice(0, 3);
-
-        randomRecs.forEach(r => {
-
-          const card = document.createElement("div");
-          card.className = "rec-card";
-
-          card.innerHTML = `
-            <img src="${proxy(r.image_url)}" class="rec-img">
-            <p class="rec-name">${r.name}</p>
-          `;
-
-          recContainer.appendChild(card);
-
-        });
-
       })
-      .catch(err => console.error("ERROR JSON:", err));
-
+      .catch((err) => console.error("ERROR JSON:", err));
   </script>
-
 </body>
 </html>
