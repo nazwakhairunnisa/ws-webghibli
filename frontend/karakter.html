@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- PLAYFAIR DISPLAY -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
+
+  <title>Characters</title>
+
+  <style>
+    body {
+      background: #f5f5f5;
+      padding: 25px;
+      font-family: Arial;
+    }
+
+    h1 {
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 30px;
+    }
+
+    /* GRID ─ lebih renggang */
+    .characters-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 100px;
+      max-width: 1000px;
+      margin: auto;
+      padding: 10px 20px;
+    }
+
+    /* CARD */
+    .char-card {
+      background: white;
+      border-radius: 12px;
+      padding: 0;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: 0.25s ease;
+      cursor: pointer;
+      overflow: hidden;
+    }
+
+    .char-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+    }
+
+    /* GAMBAR FULL KOTAK */
+    .img-box {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      overflow: hidden;
+      background: #ddd;
+    }
+
+    .char-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: 0.3s ease;
+    }
+
+    /* Hover zoom */
+    .char-card:hover .char-img {
+      transform: scale(1.08);
+    }
+
+    .char-name {
+      padding: 12px 0 18px 0;
+      width: 100%;
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      font-weight: 600;
+      color: #111;
+      letter-spacing: 0.5px;
+    }
+
+    /* MORE BUTTON */
+    #moreBtn {
+      width: max-content;
+      margin: 40px auto 0 auto;
+      padding: 12px 28px;
+      background: #03695E;
+      color: white;
+      font-size: 17px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.2s ease;
+      display: block;
+      font-family: 'Playfair Display', serif;
+    }
+
+    #moreBtn:hover {
+      background: #02564c;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Characters</h1>
+
+  <div id="characters" class="characters-grid"></div>
+
+  <div id="moreBtn">More >></div>
+
+  <script>
+    function proxy(url) {
+      if (!url) return "";
+      return "https://images.weserv.nl/?url=" + encodeURIComponent(url);
+    }
+
+    Promise.all([
+      fetch("../data/films.json").then(r => r.json()),
+      fetch("../data/series.json").then(r => r.json()),
+      fetch("../data/shorts.json").then(r => r.json())
+    ]).then(([films, series, shorts]) => {
+
+      let allCharacters = [];
+
+      /* Film */
+      films.movies.forEach(movie => {
+        movie.characters?.forEach(char => {
+          allCharacters.push({
+            name: char.name,
+            image: char.image_url
+          });
+        });
+      });
+
+      /* Series */
+      series.series.forEach(s => {
+        s.characters?.forEach(char => {
+          allCharacters.push({
+            name: char.name,
+            image: null
+          });
+        });
+      });
+
+      /* Shorts */
+      shorts.shorts?.forEach(short => {
+        short.characters?.forEach(char => {
+          allCharacters.push({
+            name: char.name,
+            image: char.image_url ?? null
+          });
+        });
+      });
+
+      /* Tampilkan 6 dulu */
+      render(allCharacters.slice(0, 6));
+
+      document.getElementById("moreBtn").onclick = () => {
+        render(allCharacters);
+        document.getElementById("moreBtn").style.display = "none";
+      };
+
+      function render(list) {
+        const container = document.getElementById("characters");
+        container.innerHTML = "";
+
+        list.forEach(c => {
+          const card = document.createElement("div");
+          card.className = "char-card";
+
+          card.innerHTML = `
+            <div class="img-box">
+              ${c.image ? `<img src="${proxy(c.image)}" class="char-img">` : ""}
+            </div>
+            <div class="char-name">${c.name}</div>
+          `;
+
+          container.appendChild(card);
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>
