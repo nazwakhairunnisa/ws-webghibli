@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style1.css">
+  <title>Series Detail</title>
+</head>
+
+<body>
+
+  <!-- HERO SECTION -->
+  <section class="hero-section">
+    <img id="hero-img" class="hero-img">
+    <div class="hero-overlay"></div>
+
+    <div class="hero-flex">
+      <h1 id="series-title"></h1>
+      <p id="series-synopsis-short"></p>
+    </div>
+
+    <div class="hero-overlay-green"></div>
+  </section>
+
+  <!-- MAIN CONTENT WRAPPER -->
+  <section class="green-wrapper">
+    <div class="white-card">
+
+      <!-- POSTER + META -->
+      <div class="top-content">
+        <img id="poster-img" class="poster">
+
+        <div class="meta">
+          <div><strong>Title</strong>: <span id="meta-title"></span></div>
+          <div><strong>Release Year</strong>: <span id="meta-year"></span></div>
+          <div><strong>Director</strong>: <span id="meta-director"></span></div>
+          <div><strong>Episodes</strong>: <span id="meta-episodes"></span></div>
+          <div><strong>Studio</strong>: <span id="meta-studio"></span></div>
+        </div>
+      </div>
+
+      <!-- DESCRIPTION -->
+      <h2>Description</h2>
+      <p id="series-description"></p>
+
+      <!-- SYNOPSIS -->
+      <h2>Synopsis</h2>
+      <p id="series-synopsis"></p>
+
+    </div>
+  </section>
+
+
+  <!-- SCRIPT -->
+  <script>
+    /* Ambil index dari URL */
+    const urlParams = new URLSearchParams(window.location.search);
+    const seriesIndex = urlParams.get("series") ?? 0;
+
+    /* Proxy untuk gambar */
+    function proxy(url) {
+      if (!url) return "img/hero/default.jpg";
+      return "https://images.weserv.nl/?url=" + encodeURIComponent(url);
+    }
+
+    /* HERO IMAGE MAP */
+    const heroSeries = {
+      "Ronja, the Robber's Daughter": "ronja.jpg",
+      "Sherlock Hound": "hound.jpg",
+      "Film Guru Guru": "guru.jpg",
+      "Ronja the Robber Daughter": "ronja2.jpg"
+    };
+
+    /* FETCH DATA */
+    fetch("../data/series.json")
+      .then(res => res.json())
+      .then(data => {
+
+        const series = data.series[seriesIndex];
+
+        if (!series) {
+          document.body.innerHTML = "<h1 style='color:white; text-align:center;'>Series tidak ditemukan 😭</h1>";
+          return;
+        }
+
+        /* PASANG HERO IMAGE */
+        const heroFile = heroSeries[series.title];
+        document.getElementById("hero-img").src = "img/hero/" + heroFile;
+
+        /* HERO TEXT */
+        document.getElementById("series-title").innerHTML =
+          series.title.replace(" ", "<br>");
+
+        document.getElementById("series-synopsis-short").innerText =
+          (series.plot ?? series.description ?? "").substring(0, 350);
+
+        /* META */
+        document.getElementById("poster-img").src = proxy(series.poster_url);
+        document.getElementById("meta-title").innerText = series.title;
+        document.getElementById("meta-year").innerText = series.release_year ?? "-";
+        document.getElementById("meta-director").innerText = series.director ?? "-";
+        document.getElementById("meta-episodes").innerText = series.episodes ?? "-";
+        document.getElementById("meta-studio").innerText = series.studio ?? "-";
+
+        /* DESCRIPTION */
+        document.getElementById("series-description").innerText =
+          series.description ?? "-";
+
+        /* SYNOPSIS */
+        document.getElementById("series-synopsis").innerText =
+          series.plot ?? series.description ?? "-";
+
+      })
+      .catch(err => console.error("ERROR JSON:", err));
+  </script>
+
+</body>
+</html>

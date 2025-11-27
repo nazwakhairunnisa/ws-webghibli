@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style1.css">
+  <title>Short Detail</title>
+</head>
+
+<body>
+
+  <!-- HERO SECTION -->
+  <section class="hero-section">
+    <img id="hero-img" class="hero-img">
+    <div class="hero-overlay"></div>
+
+    <div class="hero-flex">
+      <h1 id="short-title"></h1>
+      <p id="short-synopsis-short"></p>
+    </div>
+
+    <div class="hero-overlay-green"></div>
+  </section>
+
+  <!-- MAIN CONTENT WRAPPER -->
+  <section class="green-wrapper">
+    <div class="white-card">
+
+      <!-- POSTER + META -->
+      <div class="top-content">
+        <img id="poster-img" class="poster">
+
+        <div class="meta">
+          <div><strong>Title</strong>: <span id="meta-title"></span></div>
+          <div><strong>Release Year</strong>: <span id="meta-year"></span></div>
+          <div><strong>Director</strong>: <span id="meta-director"></span></div>
+        </div>
+      </div>
+
+      <!-- DESCRIPTION -->
+      <h2>Description</h2>
+      <p id="short-description"></p>
+
+      <!-- SYNOPSIS -->
+      <h2>Synopsis</h2>
+      <p id="short-synopsis"></p>
+
+    </div>
+  </section>
+
+
+  <!-- SCRIPT -->
+  <script>
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const shortIndex = urlParams.get("short") ?? 0;
+
+    function proxy(url) {
+      return "https://images.weserv.nl/?url=" + encodeURIComponent(url);
+    }
+
+    const heroShort = {
+      "3000 Leagues in Search of Mother": "3000leagues.jpg",
+      "A Sumo Wrestler's Tail": "sumo.jpg",
+      "Boro the Caterpillar": "boro.jpg",
+      "Film Guru Guru": "guru.jpg",
+      "Ghiblies": "ghiblies.jpg",
+      "Ghiblies Episode": "ghiblies2.jpg",
+      "Giant God Warrior Appears in Tokyo": "giantgod.jpg",
+      "Hoshi o Katta Hi": "hoshi.jpg",
+      "Iblard Jikan": "iblard.jpg",
+      "Imaginary Flying Machines": "flying.jpg",
+      "Koro's Big Day Out": "koro.jpg",
+      "Kujiratori": "kujiratori.jpg",
+      "Looking for a Home": "home.jpg",
+      "Mei and the Kittenbus": "mei.jpg",
+      "Mr. Dough and the Egg Princess": "egg.jpg",
+      "On Your Mark": "onyourmark.jpg",
+      "Portable Airport": "airport.jpg",
+      "Red Crow and the Ghost Ship": "redcrow.jpg",
+      "Soratobu Toshikeikaku": "soratobu.jpg",
+      "Space Station No. 9": "spacestation.jpg",
+      "The Invention of Imaginary Machines of Destruction": "invention.jpg",
+      "The Night of Taneyamagahara": "taneyama.jpg",
+      "Treasure Hunting": "treasure.jpg",
+      "Water Spider Monmon": "monmon.jpg",
+      "Zen - Grogu and Dust Bunnies": "zen.jpg"
+    };
+
+    /* FETCH DATA — FIXED: data.shorts */
+    fetch("../data/shorts.json")
+      .then(res => res.json())
+      .then(data => {
+
+        const short = data.shorts[shortIndex];
+
+        if (!short) {
+          document.body.innerHTML = "<h1 style='color:white; text-align:center;'>Short tidak ditemukan 😭</h1>";
+          return;
+        }
+
+        /* PASANG HERO IMAGE */
+        const heroFile = heroShort[short.title];
+        document.getElementById("hero-img").src = "img/hero/" + heroFile;
+
+        /* HERO TEXT */
+        document.getElementById("short-title").innerHTML =
+          short.title.replace(" ", "<br>");
+
+        document.getElementById("short-synopsis-short").innerText =
+          (short.synopsis ?? "").substring(0, 350);
+
+        /* META */
+        document.getElementById("poster-img").src = proxy(short.poster_url ?? "");
+        document.getElementById("meta-title").innerText = short.title;
+        document.getElementById("meta-year").innerText = short.release_year ?? "-";
+        document.getElementById("meta-director").innerText = short.director ?? "-";
+
+        /* DESCRIPTION */
+        document.getElementById("short-description").innerText =
+          short.description ?? "No description available.";
+
+        /* SYNOPSIS */
+        document.getElementById("short-synopsis").innerText =
+          short.synopsis ?? "No synopsis available.";
+      })
+      .catch(err => console.error("ERROR JSON:", err));
+
+  </script>
+
+</body>
+</html>

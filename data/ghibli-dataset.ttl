@@ -523,7 +523,8 @@ series:sherlock_hound a ghibli:Series ;
     ghibli:numberOfEpisodes 20 ;
     ghibli:producedBy studio:luciano_scaffa_head_yutaka_fujioka ;
     ghibli:description "Sherlock Hound Kanji 名探偵ホームズ Rōmaji Meitantei Hōmuzu Directed by Kyosuke Mikuriya (20 episodes) Hayao Miyazaki (6 episodes) Produced by Luciano Scaffa (Head) Yutaka Fujioka Screenplay by Gi Pagot (Italy) Sunao Katabuchi (eps 4-5, 9-10) Based on Sherlock Holmes by Arthur Conan Doyle Music by Kentarō Haneda Studio RAI Tokyo Movie Shinsha Production Yoshifumi Kondō (Character Design) Distributed by TV Asahi Rai 1 Release date(s) November 6, 1984 - May 20, 1985 Sherlock Hound (名探偵ホームズ , Meitantei Hōmuzu , lit. Famous Detective Holmes ) is a 26 episode Italian-Japanese animated television series produced by RAI and Tokyo Movie Shinsha , airing from November 6, 1984, to May 20, 1985." ;
-    ghibli:plot "Despite borrowing characters from the original novel by Arthur Conan Doyle, the story for Sherlock Hound is almost entirely original. The cast has been replaced with anthropomorphic dogs, and the dynamic between characters is simplified for children. Professor Moriarty and his subordinates Todd and Smiley are the central villains, whose schemes are thwarted by Holmes and his assistant Dr. Watson. The detective elements are light and instead replaced with the Watson's strange inventions. The added police and chase sequences keep the tone light and fun. Most of the plot in each episode revolves are cases of theft and not murders (although there are depictions of attempted murder in The Little Martha's Great Case and The Adventure of the Speckled Strings )."  .
+    ghibli:plot "Despite borrowing characters from the original novel by Arthur Conan Doyle, the story for Sherlock Hound is almost entirely original. The cast has been replaced with anthropomorphic dogs, and the dynamic between characters is simplified for children. Professor Moriarty and his subordinates Todd and Smiley are the central villains, whose schemes are thwarted by Holmes and his assistant Dr. Watson. The detective elements are light and instead replaced with the Watson's strange inventions. The added police and chase sequences keep the tone light and fun. Most of the plot in each episode revolves are cases of theft and not murders (although there are depictions of attempted murder in The Little Martha's Great Case and The Adventure of the Speckled Strings )."  ;
+    ghibli:posterURL <https://static.wikia.nocookie.net/studio-ghibli/images/e/e3/No_Image.png> .
 
 series:film_guru_guru a ghibli:Series ;
     ghibli:title "Film Guru Guru" ;
@@ -534,7 +535,7 @@ series:film_guru_guru a ghibli:Series ;
     ghibli:producedBy studio:toshio_suzuki ;
     ghibli:description "Film Guru Guru Kanji フィルムぐるぐる Rōmaji Firumu Guru Guru Directed by Hayao Miyazaki Hiromasa Yonebayashi Produced by Toshio Suzuki Studio Studio Ghibli Production Atsuko Tanaka Distributed by Ghibli Museum Release date(s) January 3, 2006 Running time 16 minutes Film Guru Guru (フィルムぐるぐる , Firumu Guru Guru ) is a series of animated short films shown at the Ghibli Museum in Mitaka from October 1, 2001, through November 17, 2008. The series was directed by Hayao Miyazaki with storyboards by Miyazaki and Hiromasa Yonebayashi (who also produced)." ;
     ghibli:plot "Film Guru Guru is based on a concept by ​​ Hayao Miyazaki to show audiences how old film projectors worked.  A special projector called Film Guru Guru (literally translated as Film Round and Round ) was installed in the Room of the Beginning of Movement , a permanent exhibition room located in the basement of the Ghibli Museum in Mitaka, Tokyo. An 80-meter film is spun at a speed of 24 frames per second on 124 reels, and short animations are projected on three screens. Additionally, there are three points where the picture appears to move in a single frame by projecting a blinking strobe light directly on the film from behind. This special light blinks at a slightly slower speed than the film's running speed (the light blinks 23.3 times versus 24 frames per second) providing an added dimension to the motion. There are a total of eight short animated works produced for Film Guru Guru . A Splendid Ball , Rambutan Adventures , and Fish Fish , were initially available in a single reel of film when the museum opened on October 1, 2001. Tacolator , Piyopiyo Baba , and Bobo-kun , were added On November 27, 2002. In March 2005, sound effects were added to the exhibit. The film were replaced with Madalan World on April 18, 2007. That film was then replaced with Evolution on November 17, 2008. Madalan World and Evolution do not have sound effects, while the other six films with sound effects were moved into a mini-theater exhibit in the same permanent exhibition area. Film Guru Guru consists of the eight original motion pictures, featuring work by veteran animation director Atsuko Tanaka ." ;
-    ghibli:posterURL <https://static.wikia.nocookie.net/studio-ghibli/images/c/cf/FilmGuru.jpg/revision/latest/scale-to-width-down/268?cb=20201116013723>  .
+    ghibli:posterURL <https://static.wikia.nocookie.net/studio-ghibli/images/e/e3/No_Image.png>  .
 
 series:ronja_the_robber_daughter a ghibli:Series ;
     ghibli:title "Ronja the Robber Daughter" ;
@@ -579,16 +580,6 @@ short:boro_the_caterpillar a ghibli:ShortFilm ;
     ghibli:description "Boro the Caterpillar Directed by Hayao Miyazaki Written by Hayao Miyazaki Starring Tamori Music by Joe Hisaishi Cinematography Atsushi Okui Studio Studio Ghibli Distributed by Ghibli Museum Release date(s) March 21, 2018 Running time 14 min. Boro the Caterpillar ( 毛虫のボロ , Kemushi no Boro ) is a 14-minute animated short film written and directed by Hayao Miyazaki and produced by Studio Ghibli . It premiered on March 21, 2018, and is one of the twelve short films screened exclusively at Ghibli Museum in Mitaka, Tokyo and Cinema Orion in Ghibli Park ." ;
     ghibli:plot "A tiny caterpillar named Boro hatches from an egg in the leaves of a plant. Initially fearful of the outside world, he becomes fascinated as he watches the leaves photosynthesize, producing cube-like structures. Venturing out onto the wider parts of the plant, he observes his fellow caterpillars consuming the leaves, eventually following suit. This existence is interrupted, however, by the arrival of a tank-like scorpion fly, which he narrowly avoids before it kills two of the other caterpillars and carries them off. The rest of the caterpillars hastily leave the plant, leaving it mostly dead. As Boro considers his next moves, he is unexpectedly flung into the air onto the dress of a girl biking through the field where his plant is. The girl returns home, where her mother notices Boro and gently places him on a leaf before escorting him outside. Boro, caught in unfamiliar surroundings, is initially fearful once again, but notices more photosynthesis and lowers himself onto the head of its source: a beautiful dandelion, which he gleefully claims as his new home." ;
     ghibli:posterURL <https://static.wikia.nocookie.net/studio-ghibli/images/5/5d/Boro_Logo.jpg/revision/latest/scale-to-width-down/268?cb=20200916083052>  .
-
-short:film_guru_guru a ghibli:ShortFilm ;
-    ghibli:title "Film Guru Guru" ;
-    ghibli:releaseYear 2006 ;
-    ghibli:releaseDate "January 3, 2006" ;
-    ghibli:hasDirector director:hayao_miyazaki ;
-    ghibli:duration "16 minutes" ;
-    ghibli:producedBy studio:studio_ghibli ;
-    ghibli:description "Film Guru Guru Kanji フィルムぐるぐる Rōmaji Firumu Guru Guru Directed by Hayao Miyazaki Hiromasa Yonebayashi Produced by Toshio Suzuki Studio Studio Ghibli Production Atsuko Tanaka Distributed by Ghibli Museum Release date(s) January 3, 2006 Running time 16 minutes Film Guru Guru (フィルムぐるぐる , Firumu Guru Guru ) is a series of animated short films shown at the Ghibli Museum in Mitaka from October 1, 2001, through November 17, 2008. The series was directed by Hayao Miyazaki with storyboards by Miyazaki and Hiromasa Yonebayashi (who also produced)." ;
-    ghibli:posterURL <https://static.wikia.nocookie.net/studio-ghibli/images/c/cf/FilmGuru.jpg/revision/latest/scale-to-width-down/268?cb=20201116013723>  .
 
 short:ghiblies a ghibli:ShortFilm ;
     ghibli:title "Ghiblies" ;
@@ -1786,6 +1777,9 @@ director:hayao_miyazaki a ghibli:Director ;
     ghibli:description "Hayao Miyazaki Hayao Miyazaki in 2024 Native name 宮崎 駿 Born January 5, 1941 (age 84) Bunkyō, Tokyo, Japan Nationality Japanese Alma mater Gakushuin University Occupation (s) Film director •  producer screenwriter •  animator •  author •  manga artist Years active 1963–present Employer Toei Animation (1963–71) A-Pro (1971–73) Zuiyō Eizō (1973–75) Nippon Animation (1975–79) Telecom Animation Film/TMS (1979–82) Studio Ghibli (1985–present) Spouse(s) Akemi Ōta (m. 1965) Children Gorō Miyazaki Keisuke Miyazaki Parent(s) Katsuji Miyazaki (father) Awards Academy Awards 2001 Spirited Away Golden Bear 2002 Spirited Away Golden Lion - Honorary Award 2005 Liftime Achievement Hayao Miyazaki (宮崎 駿, Miyazaki Hayao , born January 5, 1941, in Tokyo, Japan ) is a Japanese director, animator and cartoonist." ;
     ghibli:history "Miyazaki was born in Tokyo, and is the second son of four brothers. His father was Katsuji Miyazaki and their family owned Miyazaki Airplane Mfg. Co., Ltd (宮崎航空機製作所, Miyazaki Kōkūki Seisakusho ), and their factory was based in Tochigi Prefecture in Kanuma. When the Second World War began, their family was evacuated to Utsunomiya. It was here that Miyazaki stayed until his third grade of elementary school. He moved to Eifuku, Suginami, Tokyo where he studied until 4th grade of elementary school in 1950. When he was a child, he described himself as weak and was not good at exercising. Despite his physical deficiencies, he excelled at drawing. He was an avid reader and a big fan of mangakas like Osamu Tezuka and Shigeru Sugiura. He also loved the pictures books of Tetsuji Fukushima, particularly The Devil of the Savage . When he was in third year at Toyotama High School, he grew interested in animation and was greatly influenced by Toei Animation and their film Panda and the Magic Serpent (1958). He taught himself drawing at Fumio Sato's atelier and was influenced by Impressionist painters like Paul Cézanne. His direction as a filmmaker to produce child-friendly but logically-plotted content was also affected with his experiences as a child to watch child-friendly films. He cited Gamera vs. Viras as a bad example for the entire humanity to surrender to aliens for the sake of two children, while the Gamera has later associated with Studio Ghibli in productions and distributions . [ 2 ] He entered Gakushuin University and joined the Children's Literature Circle (Children's Culture Study Group). While helping plan several puppet shows, he continued drawing manga with the goal of becoming a professional manga artist, but decided to move into the world of animation. After graduating from Gakushuin University, he joined Toei Animation as an animator. He struggled with the workmanlike atmosphere of Toei Animation, and never stopped his dream of being a cartoonist. He was grea" ;
     ghibli:wikiURL <https://ghibli.fandom.com/wiki/Hayao_Miyazaki> ;
+    ghibli:imageURL <https://static.wikia.nocookie.net/studio-ghibli/images/d/da/Hayao_miyazaki_2024.jpg> ;
+    ghibli:directs series:film_guru_guru ;
+    ghibli:directs short:on_your_mark ;
     ghibli:directs movie:the_wind_rises ;
     ghibli:directs short:boro_the_caterpillar ;
     ghibli:directs movie:nausicaä_of_the_valley_of_the_wind ;
@@ -1819,7 +1813,7 @@ director:goro_miyazaki a ghibli:Director ;
     ghibli:description "Gorō Miyazaki Born January 21, 1967 Tokyo, Japan Nationality Japanese Alma mater Shinshu University, Faculty of Agriculture, Department of Forest Engineering Occupation (s) CEO •  director •  animator •  landscaper •  illustrator Parent(s) Hayao Miyazaki (father) Akemi Miyazaki (mother) Katsuji Miyazaki (grandfather) Awards Emmy Awards 2014 Ronja, the Robber's Daughter Japan Academy Prize 2012 From Up on Poppy Hill 2005 Newcomer Award for Art Selection" ;
     ghibli:history "Gorō Miyazaki was born in 1967 and is the eldest son to animators Hayao Miyazaki and Akemi Ōta in Tokyo, Japan. His family then settled in Tokorozawa City, Saitama Prefecture in 1970. While growing up, Gorō and his younger brother Keisuke found sketches of their parents' work. He would also become a fan of artistic duo Fujiko Fujio's manga Doraemon . Since his father was rarely at home, Gorō  resorted to studying his parent's animation projects in order to understand and communicate with him. He would often speak with Mamoru Oshii , who is a close family friend. As a high school student, Gorō thought that he \"would never be able to reach the level [his father] has attained.\" Gorō instead decided to pursue landscape architecture [ 1 ] as he became interested in the nature conservation. His decision to study at Shinshu University was due to its proximity to the mountains, which reminded him of his time in high school. After graduating from Shinshu University's School of Agriculture, Gorō later worked at Mori Building Co., Japan's leading urban landscape developer, as a construction consultant in the planning and designing of children parks such as  Okaya Kohan Park and general parks and landscape design of industrial parks. Gorō was later invited by Toshio Suzuki to help design Ghibli Museum in Mitaka. [ 2 ] Inspired by his father's plan he answered, \"I'll do it\", and promptly retired from Mori. [ 3 ] In 1998, he became the representative director of Museo Darte Ghibli Co., the operating company behind the Ghibli Museum. He served as its director from 2001 to June 2005. [ 4 ] In October 2001, he became the first president of Mamma Auito Co., and received the Minister of Education, Culture, Sports, Science and Technology Newcomer Award in the Art Promotion Division at the 2004 Art Awards. [ 5 ] Miyazaki's first film was Tales from Earthsea , an adaptation of Ursula K. Le Guin's Earthsea book series. Written by Miyazaki and Keiko Niwa, the film stars Junichi Okada, Bunt" ;
     ghibli:wikiURL <https://ghibli.fandom.com/wiki/Goro_Miyazaki> ;
-    ghibli:directs movie:from_up_on_poppy_hill ;
+    ghibli:imageURL <https://static.wikia.nocookie.net/studio-ghibli/images/2/2b/Goro-miyazaki.jpg> ;
     ghibli:directs series:ronja_the_robber_daughter ;
     ghibli:directs movie:earwig_and_the_witch ;
     ghibli:directs movie:tales_from_earthsea  .
@@ -1832,6 +1826,9 @@ director:isao_takahata a ghibli:Director ;
     ghibli:description "Isao Takahata Native name 高畑 勲 Born October 29, 1935 Ujiyamada, Japan Died April 5, 2018 (aged 82) Tokyo, Japan Cause of death Lung cancer Nationality Japanese Education University of Tokyo Occupation (s) Film director •  screenwriter •  producer Years active 1961–2018" ;
     ghibli:history "Takahata was originally intrigued by animation after having seen the French animated cartoon feature Le Roi et l'oiseau ( The King and the Mockingbird ) based on the fairy tale by Hans Christian Andersen. He was impressed by the film, asking \"Can these kind of things be done by animation?\". While he was job hunting at his university, Takahata was tempted to join Toei Animation by a friend who knew the company wanted an assistant director at the time. For fun he took the company's entrance examination as he had been originally interested in animation. When he was notified of the informal decision, he joined the company. The reason he decided to join the company was his thought that \"If it was animation, I can be something interesting, too.\" However, there were more than ten people joining the company that same year, two recruited by Toei Animation side recruited and the surplus workers sent by Toei head office. Because of the competition, he had a hard time achieving the status of director. Takahata finally directed his first film after he was recommended for the spot by Yasuo Ōtsuka , who was both his and Hayao Miyazaki's instructor. His directorial debut was Hols: Prince of the Sun . Hols was a failure in the commercial sense. He was among the production team deemed responsible for the failure, and was accordingly demoted. He also had difficulty making a new film as the remaining staff members who had not been demoted for Hols were working on a different Toei film. In 1971, in order to make the animated feature Pippi Longstocking , Takahata left Toei Animation with Yoichi Kotabe and Hayao Miyazaki and transferred to A production (present: SHIN-EI ANIMATION Co., Ltd. )”, an animation studio founded by his former superior, Daikichiro Kusube ( 楠部大吉郎 , くすべ だいきちろう ) They travelled to Sweden to acquire the animation rights and to hunt for locations, only to be turned away at the door by author Astrid Lindgren. Though their plan was frustrated, Miyazaki found inspiration " ;
     ghibli:wikiURL <https://ghibli.fandom.com/wiki/Isao_Takahata> ;
+    ghibli:imageURL <https://static.wikia.nocookie.net/studio-ghibli/images/b/b6/Isao_Takahata.jpg> ;
+    ghibli:directs movie:grave_of_the_fireflies ;
+    ghibli:directs movie:my_neighbors_the_yamadas ;
     ghibli:directs movie:pom_poko ;
     ghibli:directs movie:the_tale_of_the_princess_kaguya ;
     ghibli:directs movie:my_neighbors_the_yamadas ;
@@ -1847,6 +1844,8 @@ director:hiromasa_yonebayashi a ghibli:Director ;
     ghibli:nationality "Japanese" ;
     ghibli:description "Hiromasa Yonebayashi Native name 米林 宏昌 Born July 10, 1973 Nonoichi, Ishikawa, Japan Nationality Japanese Alma mater Kanazawa College of Art Occupation (s) Animator •  animation director •  director Years active 1996–present Hiromasa Yonebayashi (米林 宏昌, Yonebayashi Hiromasa , born July 10, 1973, in Nonoichi, Ishikawa, Japan), nicknamed Maro (麻呂), is director of The Secret World of Arrietty and When Marnie Was There , and animator for various Studio Ghibli ." ;
     ghibli:wikiURL <https://ghibli.fandom.com/wiki/Hiromasa_Yonebayashi> ;
+    ghibli:imageURL <https://static.wikia.nocookie.net/studio-ghibli/images/9/9c/Hiromasa_Yonebayashi.jpg> ;
+    ghibli:directs movie:mary_and_the_witchs_flower ;
     ghibli:directs movie:the_secret_world_of_arrietty ;
     ghibli:directs movie:modest_heroes ;
     ghibli:directs movie:mary_and_the_witchs_flower  .
@@ -1858,17 +1857,8 @@ director:tomomi_mochizuki a ghibli:Director ;
     ghibli:nationality "Japanese" ;
     ghibli:description "Tomomi Mochizuki Native name 望月 智充 Born December 31, 1958 Hokkaido, Japan Nationality Japanese Occupation (s) Director Tomomi Mochizuki (望月 智充 , Mochizuki Tomomi, born December 31, 1958, in Hokkaido, Japan) is a Japanese anime director who directed Studio Ghibli 's movie Ocean Waves ." ;
     ghibli:wikiURL <https://ghibli.fandom.com/wiki/Tomomi_Mochizuki> ;
+    ghibli:imageURL <https://static.wikia.nocookie.net/studio-ghibli/images/3/3a/Tomomi_Mochizuki.jpg> ;
     ghibli:directs movie:ocean_waves  .
-
-director:gorō_miyazaki a ghibli:Director ;
-    ghibli:name "Gorō Miyazaki" ;
-    ghibli:born "January 21, 1967 Tokyo, Japan" ;
-    ghibli:birthYear 1967 ;
-    ghibli:nationality "Japanese" ;
-    ghibli:description "Gorō Miyazaki Born January 21, 1967 Tokyo, Japan Nationality Japanese Alma mater Shinshu University, Faculty of Agriculture, Department of Forest Engineering Occupation (s) CEO •  director •  animator •  landscaper •  illustrator Parent(s) Hayao Miyazaki (father) Akemi Miyazaki (mother) Katsuji Miyazaki (grandfather) Awards Emmy Awards 2014 Ronja, the Robber's Daughter Japan Academy Prize 2012 From Up on Poppy Hill 2005 Newcomer Award for Art Selection" ;
-    ghibli:history "Gorō Miyazaki was born in 1967 and is the eldest son to animators Hayao Miyazaki and Akemi Ōta in Tokyo, Japan. His family then settled in Tokorozawa City, Saitama Prefecture in 1970. While growing up, Gorō and his younger brother Keisuke found sketches of their parents' work. He would also become a fan of artistic duo Fujiko Fujio's manga Doraemon . Since his father was rarely at home, Gorō  resorted to studying his parent's animation projects in order to understand and communicate with him. He would often speak with Mamoru Oshii , who is a close family friend. As a high school student, Gorō thought that he \"would never be able to reach the level [his father] has attained.\" Gorō instead decided to pursue landscape architecture [ 1 ] as he became interested in the nature conservation. His decision to study at Shinshu University was due to its proximity to the mountains, which reminded him of his time in high school. After graduating from Shinshu University's School of Agriculture, Gorō later worked at Mori Building Co., Japan's leading urban landscape developer, as a construction consultant in the planning and designing of children parks such as  Okaya Kohan Park and general parks and landscape design of industrial parks. Gorō was later invited by Toshio Suzuki to help design Ghibli Museum in Mitaka. [ 2 ] Inspired by his father's plan he answered, \"I'll do it\", and promptly retired from Mori. [ 3 ] In 1998, he became the representative director of Museo Darte Ghibli Co., the operating company behind the Ghibli Museum. He served as its director from 2001 to June 2005. [ 4 ] In October 2001, he became the first president of Mamma Auito Co., and received the Minister of Education, Culture, Sports, Science and Technology Newcomer Award in the Art Promotion Division at the 2004 Art Awards. [ 5 ] Miyazaki's first film was Tales from Earthsea , an adaptation of Ursula K. Le Guin's Earthsea book series. Written by Miyazaki and Keiko Niwa, the film stars Junichi Okada, Bunt" ;
-    ghibli:wikiURL <https://ghibli.fandom.com/wiki/Gorō_Miyazaki> ;
-    ghibli:directs series:ronja_the_robbers_daughter  .
 
 director:hiroyuki_morita a ghibli:Director ;
     ghibli:name "Hiroyuki Morita" ;
@@ -1878,6 +1868,7 @@ director:hiroyuki_morita a ghibli:Director ;
     ghibli:description "Morita Hiroyuki Native name 森田 宏幸 Born June 26, 1964 Fukuoka, Japan Nationality Japanese Occupation (s) Director •  animator Morita Hiroyuki (森田 宏幸, Morita Hiroyuki , born June 26, 1964, in Fukuoka, Japan) is a Japanese animator and director. He has worked as an animator on projects such as Akira and Lupin III . He is best known for working as director on the Studio Ghibli film The Cat Returns as well as doing key animation for the Studio Ghibli production My Neighbors the Yamadas and in-between animation for Kiki's Delivery Service . [ 1 ] He was also a sequence director and storyboard artist on Tenchi Forever! and Kabaneri of the Iron Fortress ." ;
     ghibli:history "Born in Fukuoka Prefecture Japan. Morita graduated from Fukuoka Prefectural Chikushi High School. During high school, he won several awards for anime magazines contests and even produced his own independent animated short Garasu Wari Shōnen (ガラスわり少年 , Glass Water Boy ). His contemporary at the time was Katsuyuki Toda, currently a professional manga artist. After graduating from the Department of Mechanical Engineering, Faculty of Engineering at Fukuoka University, he joined the animation production company Shaft, where he worked as an animator on Hiatari Ryōkō! . Following that, he worked freelance and worked on Akira , Kiki's Delivery Service , Roujin Z , Hashire Melos , Memories , Perfect Blue , and Golden Boy . While working on Perfect Blue , he studied idol dance choreography. He also participated working in My Neighbors the Yamadas and the Ghibli Museum -exclusive animated short Koro's Big Day Out . This film led to his being chosen to direct The Cat Returns ." ;
     ghibli:wikiURL <https://ghibli.fandom.com/wiki/Hiroyuki_Morita> ;
+    ghibli:imageURL <https://static.wikia.nocookie.net/studio-ghibli/images/d/d4/Morita_Hiroyuki.jpg> ;
     ghibli:directs movie:the_cat_returns  .
 
 director:yoshiyuki_momose a ghibli:Director ;
@@ -1888,6 +1879,8 @@ director:yoshiyuki_momose a ghibli:Director ;
     ghibli:description "Yoshiyuki Momose Native name 百瀬 義行 Born November 29, 1953 Tokyo, Japan Nationality Japanese Occupation (s) Director •  animation director •  animator Yoshiyuki Momose (百瀬 義行 , Momose Yoshiyuki , born in 1953 in Tokyo, Japan) is a Japanese animator, animation director and director. He was a regular collaborator of Hayao Miyazaki and the late Isao Takahata at Studio Ghibli ." ;
     ghibli:history "Born on November 29, 1953, in Tokyo, Japan. During his subcontracting years at Studio Neo Media and A Pro, Momose worked on TV titles such as Tensai Bakabon (1971-1972), Dokonjo Gaeru (1972-1974), and Hajime Ningen Gyatorus (1974-1976) (scenes from which are featured in the NTV documentary A Ghibli Artisan - Kazuo Oga Exhibition . After Momose was recruited by Ghibli to do layout and other duties on Grave of the Fireflies , he continued with the studio as supervisor of key animation on Only Yesterday and Pom Poko . After doing key animation on Porco Rosso , Whisper of the Heart , and Spirited Away , and CG work on Princess Mononoke , Momose returned to working with Takahata on My Neighbors the Yamadas where he worked alongside Osamu Tanabe doing storyboards, setting scenes, and directing the animation (Momose handled these duties for the first half of that film, Tanabe did the honors for the second half). Animation scholar Ben Ettinger writes: \"I've long felt Yoshiyuki Momose to be the person doing the most interesting and creative work at Studio Ghibli for years now - both in his many lovely and original shorts of recent years and, prior to that, as one of the unsung heroes of Takahata's films. Without his technical mastery in the layouts and concept design, those films would not have half their impact. \"He is one of the few creators involved in the studio who seems to have it all: the ability to come up with interesting stories and engaging characters and bring them alive in a compelling and original visual concept. He has the technical knowhow of a 40 year career during which he has touched on just about every aspect of animation, from traditional animation to CG animation to directing to concept illustration. In my mind, he is the obvious and only candidate to helm a Ghibli feature post M&T. \"Momose has drawn just about everything that it's possible for someone to draw in the animation process, including key animation drawings, concept drawings, layouts, charact" ;
     ghibli:wikiURL <https://ghibli.fandom.com/wiki/Yoshiyuki_Momose> ;
+    ghibli:imageURL <https://static.wikia.nocookie.net/studio-ghibli/images/8/85/Yoshiyuki_Momose.jpg> ;
+    ghibli:directs movie:the_imaginary ;
     ghibli:directs short:ghiblies_episode_2 ;
     ghibli:directs short:space_station_no_9 ;
     ghibli:directs short:soratobu_toshikeikaku ;
@@ -1897,34 +1890,45 @@ director:yoshiyuki_momose a ghibli:Director ;
 
 director:michaël_dudok_de_wit a ghibli:Director ;
     ghibli:name "Michaël Dudok de Wit" ;
+    ghibli:imageURL <https://static.wikia.nocookie.net/studio-ghibli/images/e/e3/No_Image.png> ;
     ghibli:directs movie:the_red_turtle  .
 
 director:akihiko_yamashita a ghibli:Director ;
     ghibli:name "Akihiko Yamashita" ;
+    ghibli:born "February 6, 1966 Okayama Prefecture, Chūgoku, Japan" ;
+    ghibli:nationality "Japanese" ;
+    ghibli:imageURL <https://static.wikia.nocookie.net/studio-ghibli/images/1/11/Akihiko_Yamashita.jpg> ;
+    ghibli:history "After graduating from Kurashiki Minami College in Okayama Prefecture, Yamashita Akihiko moved to Tokyo to work as an animator. His first professional animation work was with Tokyo Movie Shinsha's Sherlock Hound in 1984. Soon afterwards, he was responsible for character setting, scriptwriting and animation supervision for several other productions. He has also participated in the character setting of the video game Project J 2 and the animation production of the opening of the Fantasy Water Margin series. He most notably worked as an animator for Spirited Away and animation supervisor for Howl's Moving Castle, Tales from Earthsea, and so on.  He directed A Sumo Wrestler's Tail, released exclusively for the Ghibli Museum in Mitaka in early 2010." ;
     ghibli:directs short:a_sumo_wrestlers_tail  .
 
 director:shinji_higuchi a ghibli:Director ;
     ghibli:name "Shinji Higuchi" ;
+    ghibli:imageURL <https://static.wikia.nocookie.net/studio-ghibli/images/e/e3/No_Image.png> ;
     ghibli:directs short:giant_god_warrior_appears_in_tokyo  .
 
 director:kazuya_konaka a ghibli:Director ;
     ghibli:name "Kazuya Konaka" ;
+    ghibli:imageURL <https://static.wikia.nocookie.net/studio-ghibli/images/e/e3/No_Image.png> ;
     ghibli:directs short:red_crow_and_the_ghost_ship  .
 
 director:hideaki_anno a ghibli:Director ;
     ghibli:name "Hideaki Anno" ;
+    ghibli:imageURL <https://static.wikia.nocookie.net/studio-ghibli/images/e/e3/No_Image.png> ;
     ghibli:directs short:the_invention_of_imaginary_machines_of_destruction  .
 
 director:kazuo_oga a ghibli:Director ;
     ghibli:name "Kazuo Oga" ;
+    ghibli:imageURL <https://static.wikia.nocookie.net/studio-ghibli/images/a/a1/Kazuo_Oga.jpg> ;
     ghibli:directs short:the_night_of_taneyamagahara  .
 
 director:takeshi_inamura a ghibli:Director ;
     ghibli:name "Takeshi Inamura" ;
+    ghibli:imageURL <https://static.wikia.nocookie.net/studio-ghibli/images/7/74/Takeshi_Inamura.jpg> ;
     ghibli:directs short:treasure_hunting  .
 
 director:katsuya_kondō a ghibli:Director ;
     ghibli:name "Katsuya Kondō" ;
+    ghibli:imageURL <https://static.wikia.nocookie.net/studio-ghibli/images/4/4e/Katsuya_05.jpg> ;
     ghibli:directs short:zen_-_grogu_and_dust_bunnies  .
 
 # ==============================

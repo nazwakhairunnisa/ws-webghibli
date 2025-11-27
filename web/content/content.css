@@ -1,0 +1,150 @@
+/* ===========================================================
+   PAGE BACKGROUND
+=========================================================== */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to bottom, #A5C6DB, #03695E);
+  overflow-x: hidden;
+}
+
+/* ===========================================================
+   MAIN CONTENT BOX
+=========================================================== */
+.container {
+  margin-top: 140px;
+  padding: 40px 60px;
+  background: white;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+}
+
+/* SECTION TITLE */
+.section-block h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+/* ===========================================================
+   FILMS GRID
+=========================================================== */
+.film-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 45px;
+}
+
+.film-card {
+  text-align: center;
+}
+
+/* IMAGE STYLE */
+.film-img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+  background: #DADADA;
+}
+
+/* Placeholder for missing images */
+.placeholder-image {
+  width: 100%;
+  height: 300px;
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  font-size: 60px;
+}
+
+/* No data message */
+.no-data {
+  text-align: center;
+  padding: 40px;
+  color: #999;
+  font-size: 1.1rem;
+}
+
+/* MORE BUTTON */
+.more-btn {
+  display: block;
+  margin-top: 25px;
+  text-align: right;
+  font-weight: 600;
+  text-decoration: none;
+  color: black;
+}
+
+/* ===========================================================
+   RESPONSIVE
+=========================================================== */
+
+/* Tablet */
+@media (max-width: 900px) {
+  .film-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  .film-img {
+    height: 260px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+
+  .container {
+    padding: 20px;
+  }
+
+  .film-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .film-img {
+    height: auto;
+    aspect-ratio: 3 / 4;
+  }
+
+  .card-title {
+    font-size: 15px;
+  }
+}
+
+/* ===========================================================
+   LINK STYLING - MUST BE AT THE END TO OVERRIDE OTHER STYLES
+=========================================================== */
+.film-card a,
+.film-card a:link,
+.film-card a:visited,
+.film-card a:hover,
+.film-card a:active {
+  text-decoration: none !important;
+  color: #333 !important;
+  display: block;
+}
+
+.film-card a:hover {
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+/* TITLE STYLING */
+.film-card .card-title,
+.film-card a .card-title {
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333 !important;
+  line-height: 1.4;
+  text-align: center;
+  text-decoration: none !important;
+}
