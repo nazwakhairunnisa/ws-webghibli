@@ -1,5 +1,5 @@
 # Ghibli Wiki RDF Dataset
-# Generated: 2025-11-24 12:25:24
+# Generated: 2025-11-27 08:59:12
 # Source: Ghibli Fandom Wiki
 
 @prefix ghibli: <http://ghibliwiki.org/ontology#> .
@@ -1781,27 +1781,29 @@ director:hayao_miyazaki a ghibli:Director ;
     ghibli:directs series:film_guru_guru ;
     ghibli:directs short:on_your_mark ;
     ghibli:directs movie:the_wind_rises ;
-    ghibli:directs movie:my_neighbor_totoro ;
-    ghibli:directs short:looking_for_a_home ;
-    ghibli:directs short:mr_dough_and_the_egg_princess ;
-    ghibli:directs movie:ponyo ;
-    ghibli:directs short:koros_big_day_out ;
-    ghibli:directs movie:the_castle_of_cagliostro ;
-    ghibli:directs series:sherlock_hound ;
-    ghibli:directs movie:princess_mononoke ;
-    ghibli:directs movie:porco_rosso ;
-    ghibli:directs movie:kikis_delivery_service ;
-    ghibli:directs short:hoshi_o_katta_hi ;
     ghibli:directs short:boro_the_caterpillar ;
-    ghibli:directs movie:the_boy_and_the_heron ;
+    ghibli:directs movie:nausicaä_of_the_valley_of_the_wind ;
     ghibli:directs short:water_spider_monmon ;
+    ghibli:directs movie:castle_in_the_sky ;
+    ghibli:directs movie:porco_rosso ;
+    ghibli:directs series:sherlock_hound ;
+    ghibli:directs short:looking_for_a_home ;
+    ghibli:directs movie:spirited_away ;
+    ghibli:directs movie:ponyo ;
+    ghibli:directs movie:the_boy_and_the_heron ;
+    ghibli:directs short:hoshi_o_katta_hi ;
+    ghibli:directs movie:kikis_delivery_service ;
+    ghibli:directs short:koros_big_day_out ;
+    ghibli:directs movie:my_neighbor_totoro ;
+    ghibli:directs short:mr_dough_and_the_egg_princess ;
+    ghibli:directs short:imaginary_flying_machines ;
+    ghibli:directs series:film_guru_guru ;
     ghibli:directs short:kujiratori ;
     ghibli:directs short:mei_and_the_kittenbus ;
-    ghibli:directs movie:nausicaä_of_the_valley_of_the_wind ;
-    ghibli:directs movie:spirited_away ;
-    ghibli:directs movie:castle_in_the_sky ;
-    ghibli:directs short:imaginary_flying_machines ;
-    ghibli:directs movie:howls_moving_castle  .
+    ghibli:directs movie:princess_mononoke ;
+    ghibli:directs movie:howls_moving_castle ;
+    ghibli:directs short:on_your_mark ;
+    ghibli:directs movie:the_castle_of_cagliostro  .
 
 director:goro_miyazaki a ghibli:Director ;
     ghibli:name "Goro Miyazaki" ;
@@ -1813,9 +1815,8 @@ director:goro_miyazaki a ghibli:Director ;
     ghibli:wikiURL <https://ghibli.fandom.com/wiki/Goro_Miyazaki> ;
     ghibli:imageURL <https://static.wikia.nocookie.net/studio-ghibli/images/2/2b/Goro-miyazaki.jpg> ;
     ghibli:directs series:ronja_the_robber_daughter ;
-    ghibli:directs movie:tales_from_earthsea ;
     ghibli:directs movie:earwig_and_the_witch ;
-    ghibli:directs movie:from_up_on_poppy_hill  .
+    ghibli:directs movie:tales_from_earthsea  .
 
 director:isao_takahata a ghibli:Director ;
     ghibli:name "Isao Takahata" ;
@@ -1829,9 +1830,11 @@ director:isao_takahata a ghibli:Director ;
     ghibli:directs movie:grave_of_the_fireflies ;
     ghibli:directs movie:my_neighbors_the_yamadas ;
     ghibli:directs movie:pom_poko ;
-    ghibli:directs movie:panda_go_panda ;
     ghibli:directs movie:the_tale_of_the_princess_kaguya ;
+    ghibli:directs movie:my_neighbors_the_yamadas ;
+    ghibli:directs movie:grave_of_the_fireflies ;
     ghibli:directs short:3000_leagues_in_search_of_mother ;
+    ghibli:directs movie:panda_go_panda ;
     ghibli:directs movie:only_yesterday  .
 
 director:hiromasa_yonebayashi a ghibli:Director ;
@@ -1844,7 +1847,8 @@ director:hiromasa_yonebayashi a ghibli:Director ;
     ghibli:imageURL <https://static.wikia.nocookie.net/studio-ghibli/images/9/9c/Hiromasa_Yonebayashi.jpg> ;
     ghibli:directs movie:mary_and_the_witchs_flower ;
     ghibli:directs movie:the_secret_world_of_arrietty ;
-    ghibli:directs movie:modest_heroes  .
+    ghibli:directs movie:modest_heroes ;
+    ghibli:directs movie:mary_and_the_witchs_flower  .
 
 director:tomomi_mochizuki a ghibli:Director ;
     ghibli:name "Tomomi Mochizuki" ;
@@ -1878,10 +1882,11 @@ director:yoshiyuki_momose a ghibli:Director ;
     ghibli:imageURL <https://static.wikia.nocookie.net/studio-ghibli/images/8/85/Yoshiyuki_Momose.jpg> ;
     ghibli:directs movie:the_imaginary ;
     ghibli:directs short:ghiblies_episode_2 ;
-    ghibli:directs short:soratobu_toshikeikaku ;
-    ghibli:directs short:ghiblies ;
     ghibli:directs short:space_station_no_9 ;
-    ghibli:directs short:portable_airport  .
+    ghibli:directs short:soratobu_toshikeikaku ;
+    ghibli:directs short:portable_airport ;
+    ghibli:directs movie:the_imaginary ;
+    ghibli:directs short:ghiblies  .
 
 director:michaël_dudok_de_wit a ghibli:Director ;
     ghibli:name "Michaël Dudok de Wit" ;
