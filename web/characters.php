@@ -62,13 +62,48 @@ include 'navbar.php';
       margin: 0;
     }
 
+    /* HEADER SECTION WITH TITLE AND SORT BUTTONS */
+    .header-section {
+      max-width: 1200px;
+      margin: 80px auto 30px auto;
+      padding: 0 20px;
+    }
+
     h1 {
       text-align: center;
       font-family: 'Playfair Display', serif;
-      margin-bottom: 30px;
-      margin-top: 80px;
+      margin-bottom: 15px;
       font-size: 2.5rem;
       color: #03695E;
+    }
+
+    .sort-buttons {
+      display: flex;
+      gap: 8px;
+      justify-content: flex-end;
+      margin-top: 10px;
+    }
+
+    .sort-btn {
+      padding: 8px 16px;
+      border: 2px solid #ddd;
+      background: white;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+
+    .sort-btn:hover {
+      border-color: #03695E;
+      color: #03695E;
+    }
+
+    .sort-btn.active {
+      background: #03695E;
+      border-color: #03695E;
+      color: white;
     }
 
     /* GRID  */
@@ -176,13 +211,20 @@ include 'navbar.php';
         gap: 20px;
       }
 
+      .header-section {
+        margin-top: 100px;
+      }
+
       h1 {
         font-size: 2rem;
-        margin-top: 100px;
       }
 
       .char-name {
         font-size: 16px;
+      }
+
+      .sort-buttons {
+        justify-content: center;
       }
     }
   </style>
@@ -190,9 +232,15 @@ include 'navbar.php';
 
 <body>
 
-  <h1>Studio Ghibli Characters</h1>
+  <div class="header-section">
+    <h1>Studio Ghibli Characters</h1>
+    <div class="sort-buttons">
+      <button class="sort-btn active" onclick="sortCharacters('asc')">A-Z</button>
+      <button class="sort-btn" onclick="sortCharacters('desc')">Z-A</button>
+    </div>
+  </div>
 
-  <div class="characters-grid">
+  <div class="characters-grid" id="charactersGrid">
     <?php if (!empty($characters)): ?>
       <?php foreach ($characters as $character): ?>
         <?php 
@@ -200,7 +248,9 @@ include 'navbar.php';
         $charName = htmlspecialchars($character['name']['value']);
         ?>
         
-        <a href="character-detail.php?name=<?php echo urlencode($character['name']['value']); ?>" class="char-card">
+        <a href="character-detail.php?name=<?php echo urlencode($character['name']['value']); ?>" 
+           class="char-card" 
+           data-name="<?php echo $charName; ?>">
           <div class="img-box">
             <?php if (!empty($charImageURL)): ?>
               <img src="image-proxy.php?url=<?php echo urlencode($charImageURL); ?>" 
@@ -221,6 +271,27 @@ include 'navbar.php';
       <p class="no-data">No characters found.</p>
     <?php endif; ?>
   </div>
+
+  <script>
+    function sortCharacters(order) {
+      const grid = document.getElementById('charactersGrid');
+      const cards = Array.from(document.querySelectorAll('.char-card'));
+      
+      // Update active button
+      document.querySelectorAll('.sort-btn').forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+      
+      // Sort cards
+      cards.sort((a, b) => {
+        const nameA = a.getAttribute('data-name').toLowerCase();
+        const nameB = b.getAttribute('data-name').toLowerCase();
+        return order === 'asc' ? nameA.localeCompare(nameB) : nameB.localeCompare(nameA);
+      });
+      
+      // Re-append sorted cards
+      cards.forEach(card => grid.appendChild(card));
+    }
+  </script>
 
 </body>
 </html>

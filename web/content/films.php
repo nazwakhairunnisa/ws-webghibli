@@ -41,8 +41,6 @@ $films = isset($filmsData['results']['bindings']) ? $filmsData['results']['bindi
 include '../navbar.php';
 ?>
 
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -52,21 +50,55 @@ include '../navbar.php';
 
     <link rel="stylesheet" href="../navbar.css">
     <link rel="stylesheet" href="content.css">
+    <style>
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .sort-buttons {
+            display: flex;
+            gap: 8px;
+        }
+        .sort-btn {
+            padding: 8px 16px;
+            border: 2px solid #ddd;
+            background: white;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+        .sort-btn:hover {
+            border-color: #4caf50;
+            color: #4caf50;
+        }
+        .sort-btn.active {
+            background: #4caf50;
+            border-color: #4caf50;
+            color: white;
+        }
+    </style>
 </head>
 
 <body>
-
-
     <!-- MAIN CONTENT -->
     <main class="container">
-
         <section class="section-block" id="films">
-            <h2>Films</h2>
-            <div class="film-grid">
-                
+            <div class="section-header">
+                <h2>Films</h2>
+                <div class="sort-buttons">
+                    <button class="sort-btn active" onclick="sortFilms('asc')">A-Z</button>
+                    <button class="sort-btn" onclick="sortFilms('desc')">Z-A</button>
+                </div>
+            </div>
+
+            <div class="film-grid" id="filmGrid">
                 <?php if (!empty($films)): ?>
                 <?php foreach ($films as $film): ?>
-                    <article class="film-card">
+                    <article class="film-card" data-title="<?php echo htmlspecialchars($film['title']['value']); ?>">
                     <a href="../detail.php?name=<?php echo urlencode($film['title']['value']); ?>&type=film" style="text-decoration: none; color: #333;">
                         <?php 
                         $filmPosterURL = isset($film['posterURL']['value']) ? $film['posterURL']['value'] : '';
@@ -94,13 +126,30 @@ include '../navbar.php';
                 <?php else: ?>
                 <p class="no-data">No films found.</p>
                 <?php endif; ?>
-
             </div>
-        
-            </section>
-
+        </section>
     </main>
 
     <script src="../app.js"></script>
+    <script>
+        function sortFilms(order) {
+            const grid = document.getElementById('filmGrid');
+            const cards = Array.from(document.querySelectorAll('.film-card'));
+            
+            // Update active button
+            document.querySelectorAll('.sort-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            // Sort cards
+            cards.sort((a, b) => {
+                const titleA = a.getAttribute('data-title').toLowerCase();
+                const titleB = b.getAttribute('data-title').toLowerCase();
+                return order === 'asc' ? titleA.localeCompare(titleB) : titleB.localeCompare(titleA);
+            });
+            
+            // Re-append sorted cards
+            cards.forEach(card => grid.appendChild(card));
+        }
+    </script>
 </body>
 </html>

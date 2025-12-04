@@ -551,6 +551,6 @@ if __name__ == "__main__":
         shorts_json='data/shorts.json'            # Shorts data
     )
     
-    converter.convert_all('ghibli-dataset.ttl')
+    converter.convert_all('data/ghibli-dataset.ttl')
     
     print("\n🎉 Conversion complete!")

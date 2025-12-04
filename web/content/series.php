@@ -51,10 +51,41 @@ include '../navbar.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ghibli - Film</title>
+    <title>Ghibli - Series</title>
 
     <link rel="stylesheet" href="../navbar.css">
     <link rel="stylesheet" href="content.css">
+    <style>
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .sort-buttons {
+            display: flex;
+            gap: 8px;
+        }
+        .sort-btn {
+            padding: 8px 16px;
+            border: 2px solid #ddd;
+            background: white;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+        .sort-btn:hover {
+            border-color: #4caf50;
+            color: #4caf50;
+        }
+        .sort-btn.active {
+            background: #4caf50;
+            border-color: #4caf50;
+            color: white;
+        }
+    </style>
 </head>
 
 <body>
@@ -64,12 +95,19 @@ include '../navbar.php';
     <main class="container">
 
         <section class="section-block" id="films">
-            <h2>Series</h2>
-            <div class="film-grid">
+            <div class="section-header">
+                <h2>Series</h2>
+                <div class="sort-buttons">
+                    <button class="sort-btn active" onclick="sortSeries('asc')">A-Z</button>
+                    <button class="sort-btn" onclick="sortSeries('desc')">Z-A</button>
+                </div>
+            </div>
+
+            <div class="film-grid" id="seriesGrid">
                 
                 <?php if (!empty($series)): ?>
                 <?php foreach ($series as $ser): ?>
-                    <article class="grid-card">
+                    <article class="grid-card" data-title="<?php echo htmlspecialchars($ser['title']['value']); ?>">
                     <a href="../detail.php?name=<?php echo urlencode($ser['title']['value']); ?>&type=series">
                         <?php 
                         $seriesPosterURL = isset($ser['posterURL']['value']) ? $ser['posterURL']['value'] : '';
@@ -100,10 +138,30 @@ include '../navbar.php';
 
             </div>
         
-            </section>
+        </section>
 
     </main>
 
     <script src="../app.js"></script>
+    <script>
+        function sortSeries(order) {
+            const grid = document.getElementById('seriesGrid');
+            const cards = Array.from(document.querySelectorAll('.grid-card'));
+            
+            // Update active button
+            document.querySelectorAll('.sort-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            // Sort cards
+            cards.sort((a, b) => {
+                const titleA = a.getAttribute('data-title').toLowerCase();
+                const titleB = b.getAttribute('data-title').toLowerCase();
+                return order === 'asc' ? titleA.localeCompare(titleB) : titleB.localeCompare(titleA);
+            });
+            
+            // Re-append sorted cards
+            cards.forEach(card => grid.appendChild(card));
+        }
+    </script>
 </body>
 </html>

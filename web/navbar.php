@@ -10,7 +10,7 @@
 
   <!-- NAVBAR -->
   <header class="navbar">
-    <div class="logo">Ghibli<br>Studio</div>
+    <div class="logo">Ghibli<br>Wiki</div>
 
     <nav class="nav-links">
       <a href="<?php echo (basename(dirname($_SERVER['PHP_SELF'])) == 'content') ? '../index.php' : 'index.php'; ?>" <?php echo (basename($_SERVER['PHP_SELF']) == 'index.php') ? 'class="active"' : ''; ?>>Home</a>
